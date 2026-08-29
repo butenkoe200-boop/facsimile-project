@@ -3,7 +3,7 @@ import { Check, Plane, Armchair, Car, Gift, Flower2, Download, Send, Lock, Mail,
 
 import thanksBg from "@/assets/bora-bora.jpg";
 import resortSunset from "@/assets/resort-sunset.jpg";
-import { Footer, Header, HelpBar, Header as _Header } from "@/components/travel/Chrome";
+import { Footer, Header, HelpBar } from "@/components/travel/Chrome";
 import { ORDER } from "@/lib/order";
 
 export const Route = createFileRoute("/thanks")({
