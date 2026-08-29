@@ -29,7 +29,7 @@ const STEPS = ["Нажмите кнопку\n«Оплатить через Ян�
 
 function PhoneMock() {
   return (
-    <div className="mx-auto w-[150px] rounded-[22px] border-[5px] border-navy bg-card p-2 shadow-card">
+    <div className="mx-auto w-full max-w-[132px] rounded-[22px] border-[5px] border-navy bg-card p-2 shadow-card">
       <div className="mx-auto mb-2 h-1 w-8 rounded-full bg-navy" />
       <div className="flex items-center justify-between px-1 text-[7px] text-slate">
         <span>9:41</span>
