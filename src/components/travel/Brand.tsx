@@ -1,4 +1,8 @@
 import { Globe } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+import { useLanguage, type Lang } from "@/lib/i18n";
+
 
 export function GmLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const title = tone === "light" ? "text-white" : "text-ink";
@@ -59,19 +63,77 @@ export function TravelPayLogo({
 
 export function LangSelector({ tone = "dark" }: { tone?: "dark" | "light" }) {
   const color = tone === "light" ? "text-white/85" : "text-slate";
+  const { lang, setLang } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    return () => document.removeEventListener("mousedown", onDoc);
+  }, [open]);
+
+  const OPTIONS: { id: Lang; short: string; label: string }[] = [
+    { id: "ru", short: "RU", label: "Русский" },
+    { id: "en", short: "EN", label: "English" },
+  ];
+
   return (
-    <button
-      type="button"
-      className={`flex items-center gap-1.5 text-[12px] font-medium ${color} transition-opacity hover:opacity-70`}
-    >
-      <Globe className="size-[15px]" />
-      RU
-      <svg width="9" height="6" viewBox="0 0 9 6" aria-hidden="true">
-        <path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
-      </svg>
-    </button>
+    <div ref={ref} className="relative" data-no-translate="">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label="Language / Язык"
+        className={`flex items-center gap-1.5 text-[12px] font-medium ${color} transition-opacity hover:opacity-70`}
+      >
+        <Globe className="size-[15px]" />
+        {lang.toUpperCase()}
+        <svg
+          width="9"
+          height="6"
+          viewBox="0 0 9 6"
+          aria-hidden="true"
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          <path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+        </svg>
+      </button>
+
+      {open && (
+        <ul
+          role="listbox"
+          className="absolute right-0 top-[calc(100%+6px)] z-50 w-[122px] overflow-hidden rounded-[10px] border border-line bg-card py-1 shadow-raised"
+        >
+          {OPTIONS.map((o) => (
+            <li key={o.id}>
+              <button
+                type="button"
+                role="option"
+                aria-selected={lang === o.id}
+                onClick={() => {
+                  setLang(o.id);
+                  setOpen(false);
+                }}
+                className={`flex w-full items-center justify-between px-3 py-2 text-left text-[11.5px] transition-colors hover:bg-surface-2 ${
+                  lang === o.id ? "font-bold text-gold-deep" : "text-ink"
+                }`}
+              >
+                {o.label}
+                <span className="text-[9.5px] text-slate">{o.short}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
+
 
 /* ---------- Payment brand marks ---------- */
 

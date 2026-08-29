@@ -29,7 +29,7 @@ const STEPS = ["Нажмите кнопку\n«Оплатить через Ян�
 
 function PhoneMock() {
   return (
-    <div className="mx-auto w-[150px] rounded-[22px] border-[5px] border-navy bg-card p-2 shadow-card">
+    <div className="mx-auto w-full max-w-[132px] rounded-[22px] border-[5px] border-navy bg-card p-2 shadow-card">
       <div className="mx-auto mb-2 h-1 w-8 rounded-full bg-navy" />
       <div className="flex items-center justify-between px-1 text-[7px] text-slate">
         <span>9:41</span>
@@ -93,8 +93,9 @@ function YandexPayPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-2 gap-6">
-              <div>
+            <div className="grid grid-cols-[1fr_296px] gap-5">
+              <div className="min-w-0">
+
                 <h2 className="text-[12.5px] font-bold text-ink">Как оплатить через Яндекс Pay</h2>
                 <ol className="mt-3 space-y-3">
                   {STEPS.map((step, index) => (
@@ -118,17 +119,17 @@ function YandexPayPage() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <h2 className="text-center text-[12px] font-semibold text-ink">Оплатить с помощью Яндекс Pay</h2>
                 <div className="mt-3 rounded-[14px] border border-line bg-surface-2 p-4">
-                  <div className="grid grid-cols-[1fr_auto] items-center gap-3">
+                  <div className="grid grid-cols-[132px_1fr] items-center gap-3">
                     <PhoneMock />
-                    <div>
+                    <div className="min-w-0">
                       <div className="flex items-center gap-1.5">
                         <YaPayMark size={22} />
                         <span className="text-[16px] font-bold text-ink">Pay</span>
                       </div>
-                      <p className="mt-2 text-[11px] leading-[1.4] text-ink">
+                      <p className="mt-2 text-[10.5px] leading-[1.45] text-ink">
                         Оплачивайте быстро и удобно в приложении Яндекс
                       </p>
                     </div>
@@ -137,19 +138,20 @@ function YandexPayPage() {
                   <button
                     type="button"
                     onClick={pay}
-                    className="mt-4 flex w-full items-center justify-center gap-2.5 rounded-[10px] bg-navy py-3 text-[13px] font-semibold text-white transition-opacity hover:opacity-90"
+                    className="mt-4 flex w-full items-center justify-center gap-2 rounded-[10px] bg-navy py-3 text-[11.5px] font-semibold whitespace-nowrap text-white transition-opacity hover:opacity-90"
                   >
-                    <YaPayMark size={18} />
+                    <YaPayMark size={16} />
                     <span>Pay</span>
                     <span className="text-white/40">|</span>
                     Оплатить через Яндекс Pay
                   </button>
 
-                  <p className="mt-2.5 flex items-start justify-center gap-1.5 text-center text-[9.5px] leading-[1.4] text-slate">
+                  <p className="mt-2.5 flex items-start justify-center gap-1.5 text-center text-[9px] leading-[1.4] text-slate">
                     <Lock className="mt-px size-3 shrink-0" />
                     Нажимая кнопку, вы перейдёте в приложение Яндекс для подтверждения оплаты
                   </p>
                 </div>
+
               </div>
             </div>
 
