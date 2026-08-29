@@ -123,11 +123,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <PaymentStateProvider>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </PaymentStateProvider>
+      <LanguageProvider>
+        <PaymentStateProvider>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </PaymentStateProvider>
+      </LanguageProvider>
     </QueryClientProvider>
+
   );
 }
 
