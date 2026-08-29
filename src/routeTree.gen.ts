@@ -12,6 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CardRouteImport } from './routes/card'
 import { Route as CreditRouteImport } from './routes/credit'
+import { Route as CreditCheckRouteImport } from './routes/credit-check'
+import { Route as CreditDeclinedRouteImport } from './routes/credit-declined'
+import { Route as CreditFormRouteImport } from './routes/credit-form'
 import { Route as ErrorRouteImport } from './routes/error'
 import { Route as InstallmentRouteImport } from './routes/installment'
 import { Route as ProcessingRouteImport } from './routes/processing'
@@ -33,6 +36,21 @@ const CardRoute = CardRouteImport.update({
 const CreditRoute = CreditRouteImport.update({
   id: '/credit',
   path: '/credit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditCheckRoute = CreditCheckRouteImport.update({
+  id: '/credit-check',
+  path: '/credit-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditDeclinedRoute = CreditDeclinedRouteImport.update({
+  id: '/credit-declined',
+  path: '/credit-declined',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditFormRoute = CreditFormRouteImport.update({
+  id: '/credit-form',
+  path: '/credit-form',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ErrorRoute = ErrorRouteImport.update({
@@ -75,6 +93,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
   '/credit': typeof CreditRoute
+  '/credit-check': typeof CreditCheckRoute
+  '/credit-declined': typeof CreditDeclinedRoute
+  '/credit-form': typeof CreditFormRoute
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
@@ -87,6 +108,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
   '/credit': typeof CreditRoute
+  '/credit-check': typeof CreditCheckRoute
+  '/credit-declined': typeof CreditDeclinedRoute
+  '/credit-form': typeof CreditFormRoute
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
@@ -100,6 +124,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
   '/credit': typeof CreditRoute
+  '/credit-check': typeof CreditCheckRoute
+  '/credit-declined': typeof CreditDeclinedRoute
+  '/credit-form': typeof CreditFormRoute
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
@@ -114,6 +141,9 @@ export interface FileRouteTypes {
     | '/'
     | '/card'
     | '/credit'
+    | '/credit-check'
+    | '/credit-declined'
+    | '/credit-form'
     | '/error'
     | '/installment'
     | '/processing'
@@ -126,6 +156,9 @@ export interface FileRouteTypes {
     | '/'
     | '/card'
     | '/credit'
+    | '/credit-check'
+    | '/credit-declined'
+    | '/credit-form'
     | '/error'
     | '/installment'
     | '/processing'
@@ -138,6 +171,9 @@ export interface FileRouteTypes {
     | '/'
     | '/card'
     | '/credit'
+    | '/credit-check'
+    | '/credit-declined'
+    | '/credit-form'
     | '/error'
     | '/installment'
     | '/processing'
@@ -151,6 +187,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CardRoute: typeof CardRoute
   CreditRoute: typeof CreditRoute
+  CreditCheckRoute: typeof CreditCheckRoute
+  CreditDeclinedRoute: typeof CreditDeclinedRoute
+  CreditFormRoute: typeof CreditFormRoute
   ErrorRoute: typeof ErrorRoute
   InstallmentRoute: typeof InstallmentRoute
   ProcessingRoute: typeof ProcessingRoute
@@ -181,6 +220,27 @@ declare module '@tanstack/react-router' {
       path: '/credit'
       fullPath: '/credit'
       preLoaderRoute: typeof CreditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-check': {
+      id: '/credit-check'
+      path: '/credit-check'
+      fullPath: '/credit-check'
+      preLoaderRoute: typeof CreditCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-declined': {
+      id: '/credit-declined'
+      path: '/credit-declined'
+      fullPath: '/credit-declined'
+      preLoaderRoute: typeof CreditDeclinedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-form': {
+      id: '/credit-form'
+      path: '/credit-form'
+      fullPath: '/credit-form'
+      preLoaderRoute: typeof CreditFormRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/error': {
@@ -239,6 +299,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CardRoute: CardRoute,
   CreditRoute: CreditRoute,
+  CreditCheckRoute: CreditCheckRoute,
+  CreditDeclinedRoute: CreditDeclinedRoute,
+  CreditFormRoute: CreditFormRoute,
   ErrorRoute: ErrorRoute,
   InstallmentRoute: InstallmentRoute,
   ProcessingRoute: ProcessingRoute,
