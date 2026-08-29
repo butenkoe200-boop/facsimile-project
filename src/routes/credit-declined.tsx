@@ -3,8 +3,8 @@ import { X, Info, Wallet, QrCode, CalendarDays, Building2, Shield, Lock, PieChar
 
 import declinedBg from "@/assets/bora-bora.jpg";
 import beachLoungers from "@/assets/beach-loungers.jpg";
-import { Footer, Header, OrderSummary } from "@/components/travel/Chrome";
-import { ChatIcon, PciBadge } from "@/components/travel/Brand";
+import { ChatIcon, Footer, Header, OrderSummary } from "@/components/travel/Chrome";
+import { PciBadge } from "@/components/travel/Brand";
 import { ORDER } from "@/lib/order";
 
 export const Route = createFileRoute("/credit-declined")({

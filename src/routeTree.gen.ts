@@ -12,14 +12,21 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CardRouteImport } from './routes/card'
 import { Route as CreditRouteImport } from './routes/credit'
+import { Route as CreditApprovedRouteImport } from './routes/credit-approved'
 import { Route as CreditCheckRouteImport } from './routes/credit-check'
 import { Route as CreditDeclinedRouteImport } from './routes/credit-declined'
 import { Route as CreditFormRouteImport } from './routes/credit-form'
 import { Route as ErrorRouteImport } from './routes/error'
 import { Route as InstallmentRouteImport } from './routes/installment'
 import { Route as ProcessingRouteImport } from './routes/processing'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as ReceiptRouteImport } from './routes/receipt'
+import { Route as ReceiptEmailRouteImport } from './routes/receipt-email'
 import { Route as SbpRouteImport } from './routes/sbp'
 import { Route as SuccessRouteImport } from './routes/success'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as ThanksRouteImport } from './routes/thanks'
+import { Route as WaitingRouteImport } from './routes/waiting'
 import { Route as YandexPayRouteImport } from './routes/yandex-pay'
 import { Route as YandexSplitRouteImport } from './routes/yandex-split'
 
@@ -36,6 +43,11 @@ const CardRoute = CardRouteImport.update({
 const CreditRoute = CreditRouteImport.update({
   id: '/credit',
   path: '/credit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditApprovedRoute = CreditApprovedRouteImport.update({
+  id: '/credit-approved',
+  path: '/credit-approved',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CreditCheckRoute = CreditCheckRouteImport.update({
@@ -68,6 +80,21 @@ const ProcessingRoute = ProcessingRouteImport.update({
   path: '/processing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceiptRoute = ReceiptRouteImport.update({
+  id: '/receipt',
+  path: '/receipt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceiptEmailRoute = ReceiptEmailRouteImport.update({
+  id: '/receipt-email',
+  path: '/receipt-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SbpRoute = SbpRouteImport.update({
   id: '/sbp',
   path: '/sbp',
@@ -76,6 +103,21 @@ const SbpRoute = SbpRouteImport.update({
 const SuccessRoute = SuccessRouteImport.update({
   id: '/success',
   path: '/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThanksRoute = ThanksRouteImport.update({
+  id: '/thanks',
+  path: '/thanks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WaitingRoute = WaitingRouteImport.update({
+  id: '/waiting',
+  path: '/waiting',
   getParentRoute: () => rootRouteImport,
 } as any)
 const YandexPayRoute = YandexPayRouteImport.update({
@@ -93,14 +135,21 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
   '/credit': typeof CreditRoute
+  '/credit-approved': typeof CreditApprovedRoute
   '/credit-check': typeof CreditCheckRoute
   '/credit-declined': typeof CreditDeclinedRoute
   '/credit-form': typeof CreditFormRoute
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/profile': typeof ProfileRoute
+  '/receipt': typeof ReceiptRoute
+  '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
+  '/support': typeof SupportRoute
+  '/thanks': typeof ThanksRoute
+  '/waiting': typeof WaitingRoute
   '/yandex-pay': typeof YandexPayRoute
   '/yandex-split': typeof YandexSplitRoute
 }
@@ -108,14 +157,21 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
   '/credit': typeof CreditRoute
+  '/credit-approved': typeof CreditApprovedRoute
   '/credit-check': typeof CreditCheckRoute
   '/credit-declined': typeof CreditDeclinedRoute
   '/credit-form': typeof CreditFormRoute
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/profile': typeof ProfileRoute
+  '/receipt': typeof ReceiptRoute
+  '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
+  '/support': typeof SupportRoute
+  '/thanks': typeof ThanksRoute
+  '/waiting': typeof WaitingRoute
   '/yandex-pay': typeof YandexPayRoute
   '/yandex-split': typeof YandexSplitRoute
 }
@@ -124,14 +180,21 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
   '/credit': typeof CreditRoute
+  '/credit-approved': typeof CreditApprovedRoute
   '/credit-check': typeof CreditCheckRoute
   '/credit-declined': typeof CreditDeclinedRoute
   '/credit-form': typeof CreditFormRoute
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/profile': typeof ProfileRoute
+  '/receipt': typeof ReceiptRoute
+  '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
+  '/support': typeof SupportRoute
+  '/thanks': typeof ThanksRoute
+  '/waiting': typeof WaitingRoute
   '/yandex-pay': typeof YandexPayRoute
   '/yandex-split': typeof YandexSplitRoute
 }
@@ -141,14 +204,21 @@ export interface FileRouteTypes {
     | '/'
     | '/card'
     | '/credit'
+    | '/credit-approved'
     | '/credit-check'
     | '/credit-declined'
     | '/credit-form'
     | '/error'
     | '/installment'
     | '/processing'
+    | '/profile'
+    | '/receipt'
+    | '/receipt-email'
     | '/sbp'
     | '/success'
+    | '/support'
+    | '/thanks'
+    | '/waiting'
     | '/yandex-pay'
     | '/yandex-split'
   fileRoutesByTo: FileRoutesByTo
@@ -156,14 +226,21 @@ export interface FileRouteTypes {
     | '/'
     | '/card'
     | '/credit'
+    | '/credit-approved'
     | '/credit-check'
     | '/credit-declined'
     | '/credit-form'
     | '/error'
     | '/installment'
     | '/processing'
+    | '/profile'
+    | '/receipt'
+    | '/receipt-email'
     | '/sbp'
     | '/success'
+    | '/support'
+    | '/thanks'
+    | '/waiting'
     | '/yandex-pay'
     | '/yandex-split'
   id:
@@ -171,14 +248,21 @@ export interface FileRouteTypes {
     | '/'
     | '/card'
     | '/credit'
+    | '/credit-approved'
     | '/credit-check'
     | '/credit-declined'
     | '/credit-form'
     | '/error'
     | '/installment'
     | '/processing'
+    | '/profile'
+    | '/receipt'
+    | '/receipt-email'
     | '/sbp'
     | '/success'
+    | '/support'
+    | '/thanks'
+    | '/waiting'
     | '/yandex-pay'
     | '/yandex-split'
   fileRoutesById: FileRoutesById
@@ -187,14 +271,21 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CardRoute: typeof CardRoute
   CreditRoute: typeof CreditRoute
+  CreditApprovedRoute: typeof CreditApprovedRoute
   CreditCheckRoute: typeof CreditCheckRoute
   CreditDeclinedRoute: typeof CreditDeclinedRoute
   CreditFormRoute: typeof CreditFormRoute
   ErrorRoute: typeof ErrorRoute
   InstallmentRoute: typeof InstallmentRoute
   ProcessingRoute: typeof ProcessingRoute
+  ProfileRoute: typeof ProfileRoute
+  ReceiptRoute: typeof ReceiptRoute
+  ReceiptEmailRoute: typeof ReceiptEmailRoute
   SbpRoute: typeof SbpRoute
   SuccessRoute: typeof SuccessRoute
+  SupportRoute: typeof SupportRoute
+  ThanksRoute: typeof ThanksRoute
+  WaitingRoute: typeof WaitingRoute
   YandexPayRoute: typeof YandexPayRoute
   YandexSplitRoute: typeof YandexSplitRoute
 }
@@ -220,6 +311,13 @@ declare module '@tanstack/react-router' {
       path: '/credit'
       fullPath: '/credit'
       preLoaderRoute: typeof CreditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-approved': {
+      id: '/credit-approved'
+      path: '/credit-approved'
+      fullPath: '/credit-approved'
+      preLoaderRoute: typeof CreditApprovedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/credit-check': {
@@ -264,6 +362,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/receipt': {
+      id: '/receipt'
+      path: '/receipt'
+      fullPath: '/receipt'
+      preLoaderRoute: typeof ReceiptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/receipt-email': {
+      id: '/receipt-email'
+      path: '/receipt-email'
+      fullPath: '/receipt-email'
+      preLoaderRoute: typeof ReceiptEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sbp': {
       id: '/sbp'
       path: '/sbp'
@@ -276,6 +395,27 @@ declare module '@tanstack/react-router' {
       path: '/success'
       fullPath: '/success'
       preLoaderRoute: typeof SuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thanks': {
+      id: '/thanks'
+      path: '/thanks'
+      fullPath: '/thanks'
+      preLoaderRoute: typeof ThanksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/waiting': {
+      id: '/waiting'
+      path: '/waiting'
+      fullPath: '/waiting'
+      preLoaderRoute: typeof WaitingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/yandex-pay': {
@@ -299,14 +439,21 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CardRoute: CardRoute,
   CreditRoute: CreditRoute,
+  CreditApprovedRoute: CreditApprovedRoute,
   CreditCheckRoute: CreditCheckRoute,
   CreditDeclinedRoute: CreditDeclinedRoute,
   CreditFormRoute: CreditFormRoute,
   ErrorRoute: ErrorRoute,
   InstallmentRoute: InstallmentRoute,
   ProcessingRoute: ProcessingRoute,
+  ProfileRoute: ProfileRoute,
+  ReceiptRoute: ReceiptRoute,
+  ReceiptEmailRoute: ReceiptEmailRoute,
   SbpRoute: SbpRoute,
   SuccessRoute: SuccessRoute,
+  SupportRoute: SupportRoute,
+  ThanksRoute: ThanksRoute,
+  WaitingRoute: WaitingRoute,
   YandexPayRoute: YandexPayRoute,
   YandexSplitRoute: YandexSplitRoute,
 }
