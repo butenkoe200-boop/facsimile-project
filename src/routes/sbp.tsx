@@ -61,11 +61,11 @@ function QrCode() {
           if (isFinder(r, c) || isCenter(r, c)) return null;
           return on ? <rect key={i} x={c} y={r} width="1" height="1" fill="oklch(0.204 0.052 259)" /> : null;
         })}
-        {[
+        {([
           [0, 0],
           [0, 26],
           [26, 0],
-        ].map(([r, c]) => (
+        ] as const).map(([r, c]) => (
           <g key={`${r}-${c}`}>
             <rect x={c} y={r} width="7" height="7" fill="oklch(0.204 0.052 259)" />
             <rect x={c + 1} y={r + 1} width="5" height="5" fill="white" />
