@@ -10,33 +10,193 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CardRouteImport } from './routes/card'
+import { Route as CreditRouteImport } from './routes/credit'
+import { Route as CreditCheckRouteImport } from './routes/credit-check'
+import { Route as CreditDeclinedRouteImport } from './routes/credit-declined'
+import { Route as CreditFormRouteImport } from './routes/credit-form'
+import { Route as ErrorRouteImport } from './routes/error'
+import { Route as InstallmentRouteImport } from './routes/installment'
+import { Route as ProcessingRouteImport } from './routes/processing'
+import { Route as SbpRouteImport } from './routes/sbp'
+import { Route as SuccessRouteImport } from './routes/success'
+import { Route as YandexPayRouteImport } from './routes/yandex-pay'
+import { Route as YandexSplitRouteImport } from './routes/yandex-split'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CardRoute = CardRouteImport.update({
+  id: '/card',
+  path: '/card',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditRoute = CreditRouteImport.update({
+  id: '/credit',
+  path: '/credit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditCheckRoute = CreditCheckRouteImport.update({
+  id: '/credit-check',
+  path: '/credit-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditDeclinedRoute = CreditDeclinedRouteImport.update({
+  id: '/credit-declined',
+  path: '/credit-declined',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditFormRoute = CreditFormRouteImport.update({
+  id: '/credit-form',
+  path: '/credit-form',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ErrorRoute = ErrorRouteImport.update({
+  id: '/error',
+  path: '/error',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstallmentRoute = InstallmentRouteImport.update({
+  id: '/installment',
+  path: '/installment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProcessingRoute = ProcessingRouteImport.update({
+  id: '/processing',
+  path: '/processing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SbpRoute = SbpRouteImport.update({
+  id: '/sbp',
+  path: '/sbp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SuccessRoute = SuccessRouteImport.update({
+  id: '/success',
+  path: '/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YandexPayRoute = YandexPayRouteImport.update({
+  id: '/yandex-pay',
+  path: '/yandex-pay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YandexSplitRoute = YandexSplitRouteImport.update({
+  id: '/yandex-split',
+  path: '/yandex-split',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/card': typeof CardRoute
+  '/credit': typeof CreditRoute
+  '/credit-check': typeof CreditCheckRoute
+  '/credit-declined': typeof CreditDeclinedRoute
+  '/credit-form': typeof CreditFormRoute
+  '/error': typeof ErrorRoute
+  '/installment': typeof InstallmentRoute
+  '/processing': typeof ProcessingRoute
+  '/sbp': typeof SbpRoute
+  '/success': typeof SuccessRoute
+  '/yandex-pay': typeof YandexPayRoute
+  '/yandex-split': typeof YandexSplitRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/card': typeof CardRoute
+  '/credit': typeof CreditRoute
+  '/credit-check': typeof CreditCheckRoute
+  '/credit-declined': typeof CreditDeclinedRoute
+  '/credit-form': typeof CreditFormRoute
+  '/error': typeof ErrorRoute
+  '/installment': typeof InstallmentRoute
+  '/processing': typeof ProcessingRoute
+  '/sbp': typeof SbpRoute
+  '/success': typeof SuccessRoute
+  '/yandex-pay': typeof YandexPayRoute
+  '/yandex-split': typeof YandexSplitRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/card': typeof CardRoute
+  '/credit': typeof CreditRoute
+  '/credit-check': typeof CreditCheckRoute
+  '/credit-declined': typeof CreditDeclinedRoute
+  '/credit-form': typeof CreditFormRoute
+  '/error': typeof ErrorRoute
+  '/installment': typeof InstallmentRoute
+  '/processing': typeof ProcessingRoute
+  '/sbp': typeof SbpRoute
+  '/success': typeof SuccessRoute
+  '/yandex-pay': typeof YandexPayRoute
+  '/yandex-split': typeof YandexSplitRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/card'
+    | '/credit'
+    | '/credit-check'
+    | '/credit-declined'
+    | '/credit-form'
+    | '/error'
+    | '/installment'
+    | '/processing'
+    | '/sbp'
+    | '/success'
+    | '/yandex-pay'
+    | '/yandex-split'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/card'
+    | '/credit'
+    | '/credit-check'
+    | '/credit-declined'
+    | '/credit-form'
+    | '/error'
+    | '/installment'
+    | '/processing'
+    | '/sbp'
+    | '/success'
+    | '/yandex-pay'
+    | '/yandex-split'
+  id:
+    | '__root__'
+    | '/'
+    | '/card'
+    | '/credit'
+    | '/credit-check'
+    | '/credit-declined'
+    | '/credit-form'
+    | '/error'
+    | '/installment'
+    | '/processing'
+    | '/sbp'
+    | '/success'
+    | '/yandex-pay'
+    | '/yandex-split'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CardRoute: typeof CardRoute
+  CreditRoute: typeof CreditRoute
+  CreditCheckRoute: typeof CreditCheckRoute
+  CreditDeclinedRoute: typeof CreditDeclinedRoute
+  CreditFormRoute: typeof CreditFormRoute
+  ErrorRoute: typeof ErrorRoute
+  InstallmentRoute: typeof InstallmentRoute
+  ProcessingRoute: typeof ProcessingRoute
+  SbpRoute: typeof SbpRoute
+  SuccessRoute: typeof SuccessRoute
+  YandexPayRoute: typeof YandexPayRoute
+  YandexSplitRoute: typeof YandexSplitRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +208,107 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/card': {
+      id: '/card'
+      path: '/card'
+      fullPath: '/card'
+      preLoaderRoute: typeof CardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit': {
+      id: '/credit'
+      path: '/credit'
+      fullPath: '/credit'
+      preLoaderRoute: typeof CreditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-check': {
+      id: '/credit-check'
+      path: '/credit-check'
+      fullPath: '/credit-check'
+      preLoaderRoute: typeof CreditCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-declined': {
+      id: '/credit-declined'
+      path: '/credit-declined'
+      fullPath: '/credit-declined'
+      preLoaderRoute: typeof CreditDeclinedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit-form': {
+      id: '/credit-form'
+      path: '/credit-form'
+      fullPath: '/credit-form'
+      preLoaderRoute: typeof CreditFormRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/error': {
+      id: '/error'
+      path: '/error'
+      fullPath: '/error'
+      preLoaderRoute: typeof ErrorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/installment': {
+      id: '/installment'
+      path: '/installment'
+      fullPath: '/installment'
+      preLoaderRoute: typeof InstallmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/processing': {
+      id: '/processing'
+      path: '/processing'
+      fullPath: '/processing'
+      preLoaderRoute: typeof ProcessingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sbp': {
+      id: '/sbp'
+      path: '/sbp'
+      fullPath: '/sbp'
+      preLoaderRoute: typeof SbpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/success': {
+      id: '/success'
+      path: '/success'
+      fullPath: '/success'
+      preLoaderRoute: typeof SuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/yandex-pay': {
+      id: '/yandex-pay'
+      path: '/yandex-pay'
+      fullPath: '/yandex-pay'
+      preLoaderRoute: typeof YandexPayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/yandex-split': {
+      id: '/yandex-split'
+      path: '/yandex-split'
+      fullPath: '/yandex-split'
+      preLoaderRoute: typeof YandexSplitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CardRoute: CardRoute,
+  CreditRoute: CreditRoute,
+  CreditCheckRoute: CreditCheckRoute,
+  CreditDeclinedRoute: CreditDeclinedRoute,
+  CreditFormRoute: CreditFormRoute,
+  ErrorRoute: ErrorRoute,
+  InstallmentRoute: InstallmentRoute,
+  ProcessingRoute: ProcessingRoute,
+  SbpRoute: SbpRoute,
+  SuccessRoute: SuccessRoute,
+  YandexPayRoute: YandexPayRoute,
+  YandexSplitRoute: YandexSplitRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
