@@ -19,6 +19,8 @@ import { Route as CreditFormRouteImport } from './routes/credit-form'
 import { Route as ErrorRouteImport } from './routes/error'
 import { Route as InstallmentRouteImport } from './routes/installment'
 import { Route as ProcessingRouteImport } from './routes/processing'
+import { Route as ReceiptRouteImport } from './routes/receipt'
+import { Route as ReceiptEmailRouteImport } from './routes/receipt-email'
 import { Route as SbpRouteImport } from './routes/sbp'
 import { Route as SuccessRouteImport } from './routes/success'
 import { Route as ThanksRouteImport } from './routes/thanks'
@@ -76,6 +78,16 @@ const ProcessingRoute = ProcessingRouteImport.update({
   path: '/processing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReceiptRoute = ReceiptRouteImport.update({
+  id: '/receipt',
+  path: '/receipt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceiptEmailRoute = ReceiptEmailRouteImport.update({
+  id: '/receipt-email',
+  path: '/receipt-email',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SbpRoute = SbpRouteImport.update({
   id: '/sbp',
   path: '/sbp',
@@ -118,6 +130,8 @@ export interface FileRoutesByFullPath {
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/receipt': typeof ReceiptRoute
+  '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
   '/thanks': typeof ThanksRoute
@@ -136,6 +150,8 @@ export interface FileRoutesByTo {
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/receipt': typeof ReceiptRoute
+  '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
   '/thanks': typeof ThanksRoute
@@ -155,6 +171,8 @@ export interface FileRoutesById {
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/receipt': typeof ReceiptRoute
+  '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
   '/thanks': typeof ThanksRoute
@@ -175,6 +193,8 @@ export interface FileRouteTypes {
     | '/error'
     | '/installment'
     | '/processing'
+    | '/receipt'
+    | '/receipt-email'
     | '/sbp'
     | '/success'
     | '/thanks'
@@ -193,6 +213,8 @@ export interface FileRouteTypes {
     | '/error'
     | '/installment'
     | '/processing'
+    | '/receipt'
+    | '/receipt-email'
     | '/sbp'
     | '/success'
     | '/thanks'
@@ -211,6 +233,8 @@ export interface FileRouteTypes {
     | '/error'
     | '/installment'
     | '/processing'
+    | '/receipt'
+    | '/receipt-email'
     | '/sbp'
     | '/success'
     | '/thanks'
@@ -230,6 +254,8 @@ export interface RootRouteChildren {
   ErrorRoute: typeof ErrorRoute
   InstallmentRoute: typeof InstallmentRoute
   ProcessingRoute: typeof ProcessingRoute
+  ReceiptRoute: typeof ReceiptRoute
+  ReceiptEmailRoute: typeof ReceiptEmailRoute
   SbpRoute: typeof SbpRoute
   SuccessRoute: typeof SuccessRoute
   ThanksRoute: typeof ThanksRoute
@@ -310,6 +336,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/receipt': {
+      id: '/receipt'
+      path: '/receipt'
+      fullPath: '/receipt'
+      preLoaderRoute: typeof ReceiptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/receipt-email': {
+      id: '/receipt-email'
+      path: '/receipt-email'
+      fullPath: '/receipt-email'
+      preLoaderRoute: typeof ReceiptEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sbp': {
       id: '/sbp'
       path: '/sbp'
@@ -366,6 +406,8 @@ const rootRouteChildren: RootRouteChildren = {
   ErrorRoute: ErrorRoute,
   InstallmentRoute: InstallmentRoute,
   ProcessingRoute: ProcessingRoute,
+  ReceiptRoute: ReceiptRoute,
+  ReceiptEmailRoute: ReceiptEmailRoute,
   SbpRoute: SbpRoute,
   SuccessRoute: SuccessRoute,
   ThanksRoute: ThanksRoute,
