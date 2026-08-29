@@ -309,14 +309,24 @@ function ReceiptEmailPage() {
             </div>
           </div>
 
-          <FeatureQuad
-            items={[
-              { icon: <Headphones className="size-[17px]" />, title: "Поддержка 24/7", text: "Мы всегда на связи" },
-              { icon: <Wallet className="size-[17px]" />, title: "Без скрытых платежей", text: "Прозрачные условия" },
-              { icon: <Shield className="size-[17px]" />, title: "Надёжные партнёры", text: "Только проверенные" },
-              { icon: <BadgeCheck className="size-[17px]" />, title: "Гарантия оплаты", text: "Подтверждение сразу" },
-            ]}
-          />
+          <div className="mt-4 grid grid-cols-3 gap-4 rounded-[14px] bg-brandblue-soft px-5 py-4">
+            {[
+              { icon: Headphones, title: "Поддержка 24/7", text: "Мы всегда на связи" },
+              { icon: Wallet, title: "Без скрытых платежей", text: "Прозрачные условия" },
+              { icon: Shield, title: "Надёжные партнёры", text: "Только проверенные" },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="flex items-start gap-2.5">
+                  <Icon className="mt-0.5 size-[16px] shrink-0 text-brandblue" strokeWidth={1.8} />
+                  <span>
+                    <span className="block text-[10.5px] font-bold text-ink">{item.title}</span>
+                    <span className="block text-[9.5px] text-slate">{item.text}</span>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <Footer variant="full" />
