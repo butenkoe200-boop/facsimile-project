@@ -279,6 +279,9 @@ export const RU_EN: Record<string, string> = {
   "Банк": "Bank",
 
   // --- Анкета ---
+  "Банковская карта": "Bank card",
+  "на путешествие. Это займёт всего несколько минут.": "for your trip. It only takes a few minutes.",
+  "Заполните анкету для получения решения по кредиту на путешествие. Это займёт всего несколько минут.": "Fill in the form to get a decision on a travel loan. It only takes a few minutes.",
   "Заполнение анкеты": "Filling in the form",
   "Заполните анкету для получения решения по кредиту": "Fill in the form to get a loan decision",
   "Анкета": "Form",
