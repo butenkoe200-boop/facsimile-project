@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Check, Plane, Armchair, Car, Gift, Flower2, Download, Send, Lock, Mail, FileText, Briefcase, Headphones, Clock, Wallet, CreditCard, ShieldCheck } from "lucide-react";
 
-import thanksBg from "@/assets/bora-bora.jpg";
+import thanksBg from "@/assets/thanks-lagoon.jpg";
 import resortSunset from "@/assets/resort-sunset.jpg";
 import { Footer, Header, HelpBar } from "@/components/travel/Chrome";
 import { ORDER } from "@/lib/order";
@@ -32,6 +32,22 @@ const NEXT = [
   { icon: Briefcase, title: "Подготовка к путешествию", text: "Мы всегда на связи и готовы помочь" },
   { icon: Headphones, title: "Поддержка 24/7", text: "На всех этапах вашего путешествия" },
 ];
+
+const CONFETTI = [
+  { x: 12, y: 22, w: 6, h: 6, r: 20, color: "oklch(0.703 0.09 79)" },
+  { x: 20, y: 44, w: 5, h: 9, r: 40, color: "oklch(0.62 0.17 250)" },
+  { x: 28, y: 12, w: 7, h: 4, r: 70, color: "oklch(0.7 0.17 25)" },
+  { x: 34, y: 60, w: 5, h: 5, r: 10, color: "oklch(0.7 0.16 145)" },
+  { x: 44, y: 8, w: 4, h: 8, r: 55, color: "oklch(0.703 0.09 79)" },
+  { x: 55, y: 30, w: 6, h: 6, r: 30, color: "oklch(0.5 0.16 285)" },
+  { x: 63, y: 15, w: 5, h: 9, r: 65, color: "oklch(0.62 0.17 250)" },
+  { x: 70, y: 48, w: 7, h: 4, r: 15, color: "oklch(0.703 0.09 79)" },
+  { x: 78, y: 26, w: 5, h: 5, r: 45, color: "oklch(0.7 0.16 145)" },
+  { x: 86, y: 55, w: 6, h: 8, r: 25, color: "oklch(0.7 0.17 25)" },
+  { x: 8, y: 70, w: 5, h: 5, r: 60, color: "oklch(0.5 0.16 285)" },
+  { x: 92, y: 12, w: 4, h: 8, r: 35, color: "oklch(0.703 0.09 79)" },
+];
+
 
 function ThanksPage() {
   const DETAILS = [
@@ -64,12 +80,36 @@ function ThanksPage() {
         <div className="relative isolate overflow-hidden">
           <img
             src={thanksBg}
-            alt="Тропический пляж с бунгало"
-            width={1024}
+            alt="Тропическая лагуна с бунгало"
+            width={1536}
             height={1024}
             className="absolute inset-0 size-full object-cover"
           />
-          <div className="absolute inset-0 bg-card/35" />
+          <div className="absolute inset-0 bg-gradient-to-b from-card/55 via-card/70 to-card/85" />
+
+          {/* Декоративный самолёт и конфетти */}
+          <Plane
+            className="absolute right-8 top-6 size-[42px] -rotate-12 text-navy/70"
+            strokeWidth={1.4}
+            aria-hidden="true"
+          />
+          <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-[190px]">
+            {CONFETTI.map((c, i) => (
+              <span
+                key={i}
+                className="absolute block rounded-[1px]"
+                style={{
+                  left: `${c.x}%`,
+                  top: `${c.y}%`,
+                  width: c.w,
+                  height: c.h,
+                  background: c.color,
+                  transform: `rotate(${c.r}deg)`,
+                  opacity: 0.75,
+                }}
+              />
+            ))}
+          </span>
 
           <div className="relative px-5 py-6">
             <div className="flex justify-center">
@@ -78,15 +118,20 @@ function ThanksPage() {
               </span>
             </div>
 
-            <h1 className="mt-4 text-center text-[28px] font-bold leading-tight text-ink">
-              🎉 Спасибо!
-              <span className="mt-1 block text-[22px]">Ваше путешествие уже совсем близко.</span>
+            <h1 className="mt-4 text-center text-[30px] font-bold leading-[1.1] text-ink">
+              <span className="block">🎉 Спасибо!</span>
+              <span className="mt-1.5 block text-[23px] leading-[1.2]">
+                Ваше путешествие
+                <br />
+                уже совсем близко.
+              </span>
             </h1>
             <p className="mt-3 text-center text-[11.5px] leading-[1.5] text-ink">
               Оплата успешно завершена.
               <br />
               Подтверждение и все документы отправлены на вашу почту.
             </p>
+
 
             <div className="mt-5 grid grid-cols-5 gap-3">
               {PERKS.map((perk) => {
@@ -104,27 +149,28 @@ function ThanksPage() {
               })}
             </div>
 
-            <div className="mt-5 grid grid-cols-2 gap-4">
+            <div className="mt-5 grid grid-cols-2 items-start gap-4">
               <div className="rounded-[14px] bg-card/95 p-4 shadow-card">
                 <h2 className="text-[12.5px] font-bold text-ink">Детали вашего заказа</h2>
                 <dl className="mt-3 space-y-2.5">
                   {DETAILS.map((detail) => {
                     const Icon = detail.icon;
                     return (
-                      <div key={detail.label} className="flex items-center justify-between gap-3">
-                        <dt className="flex items-center gap-2 text-[10px] text-slate">
+                      <div key={detail.label} className="flex items-center justify-between gap-2">
+                        <dt className="flex items-center gap-2 whitespace-nowrap text-[9.5px] text-slate">
                           <Icon className="size-[13px] shrink-0 text-brandblue" strokeWidth={1.8} />
                           {detail.label}
                         </dt>
-                        <dd>
+                        <dd className="text-right">
                           {detail.badge ? (
-                            <span className="rounded-[6px] bg-success-soft px-2.5 py-1 text-[10px] font-semibold text-success">
+                            <span className="rounded-[6px] bg-success-soft px-2.5 py-1 text-[9.5px] font-semibold text-success">
                               {detail.value}
                             </span>
                           ) : (
-                            <span className="text-[10.5px] font-semibold text-ink">{detail.value}</span>
+                            <span className="text-[9.5px] font-semibold text-ink">{detail.value}</span>
                           )}
                         </dd>
+
                       </div>
                     );
                   })}

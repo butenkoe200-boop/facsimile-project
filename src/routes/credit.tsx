@@ -59,8 +59,9 @@ function CreditPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[170px_1fr] gap-6">
-              <div>
+            <div className="grid grid-cols-[164px_1fr] gap-5">
+              <div className="min-w-0">
+
                 <h2 className="text-[12px] font-bold text-ink">Как оформить кредит</h2>
                 <ol className="mt-3 space-y-3">
                   {STEPS.map((step, index) => (
@@ -91,7 +92,7 @@ function CreditPage() {
                 </div>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <h2 className="text-[12px] font-bold text-ink">Выберите банк и условия кредита</h2>
 
                 <div className="mt-3 space-y-2.5">
@@ -108,26 +109,26 @@ function CreditPage() {
                           type="button"
                           aria-pressed={active}
                           onClick={() => update({ method: "credit", bankId: bank.id, bankName: bank.name })}
-                          className={`flex w-full items-center gap-4 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
+                          className={`flex w-full items-center gap-2 rounded-[12px] border px-3 py-3 text-left transition-colors ${
                             active ? "border-gold bg-warning-soft/50" : "border-line bg-card hover:border-gold/60"
                           }`}
                         >
-                          <BankMark id={bank.id} size={30} />
-                          <span className="w-[112px] shrink-0">
-                            <span className="block text-[12px] font-bold text-ink">{bank.name}</span>
-                            <span className="block text-[9.5px] text-gold-deep">{bank.decision}</span>
+                          <BankMark id={bank.id} size={26} />
+                          <span className="w-[92px] shrink-0">
+                            <span className="block text-[11px] font-bold leading-tight text-ink">{bank.name}</span>
+                            <span className="block text-[9px] leading-tight text-gold-deep">{bank.decision}</span>
                           </span>
-                          <span className="w-[112px] shrink-0">
-                            <span className="block text-[11px] font-semibold text-ink">{bank.term}</span>
-                            <span className="block text-[9.5px] text-slate">Срок кредита</span>
+                          <span className="w-[86px] shrink-0">
+                            <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.term}</span>
+                            <span className="block text-[9px] leading-tight text-slate">Срок кредита</span>
                           </span>
-                          <span className="w-[78px] shrink-0">
-                            <span className="block text-[11px] font-semibold text-ink">{bank.rate}</span>
-                            <span className="block text-[9.5px] text-slate">Ставка годовых</span>
+                          <span className="w-[54px] shrink-0">
+                            <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.rate}</span>
+                            <span className="block text-[9px] leading-tight text-slate">Ставка годовых</span>
                           </span>
-                          <span className="flex-1">
-                            <span className="block text-[11px] font-semibold text-ink">{bank.monthly}</span>
-                            <span className="block text-[9.5px] text-slate">Платёж</span>
+                          <span className="min-w-0 flex-1">
+                            <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.monthly}</span>
+                            <span className="block text-[9px] leading-tight text-slate">Платёж</span>
                           </span>
                           <ChevronRight className="size-4 shrink-0 text-slate" />
                         </button>
@@ -136,26 +137,27 @@ function CreditPage() {
                   })}
                 </div>
 
-                <div className="mt-3 flex items-center gap-3 rounded-[12px] border border-line bg-surface-2 px-4 py-3">
+
+                <div className="mt-3 flex items-center gap-3 rounded-[12px] border border-line bg-surface-2 px-3.5 py-3">
                   <Gift className="size-[20px] shrink-0 text-gold" strokeWidth={1.6} />
-                  <div className="flex-1">
-                    <div className="text-[11.5px] font-bold text-ink">Бонус при оформлении кредита</div>
-                    <div className="text-[10px] leading-[1.4] text-slate">
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[11px] font-bold text-ink">Бонус при оформлении кредита</div>
+                    <div className="text-[9.5px] leading-[1.4] text-slate">
                       Дарим подарочный сертификат GM International Beauty на 5 000 ₽ после погашения кредита
                     </div>
                   </div>
-                  <div className="flex w-[112px] shrink-0 flex-col items-center rounded-[8px] border border-gold/50 bg-card px-2 py-2 text-center">
+                  <div className="flex w-[92px] shrink-0 flex-col items-center rounded-[8px] border border-gold/50 bg-card px-2 py-2 text-center">
                     <span
-                      className="text-[13px] font-semibold leading-none text-ink"
+                      className="text-[12px] font-semibold leading-none text-ink"
                       style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
                     >
                       GM
                     </span>
-                    <span className="text-[5.5px] font-semibold uppercase tracking-[0.08em] text-slate">
+                    <span className="text-[5px] font-semibold uppercase tracking-[0.08em] text-slate">
                       International Beauty
                     </span>
-                    <span className="mt-1 text-[13px] font-bold text-gold">5 000 ₽</span>
-                    <span className="text-[5.5px] font-semibold uppercase tracking-[0.06em] text-slate">
+                    <span className="mt-1 text-[12px] font-bold text-gold">5 000 ₽</span>
+                    <span className="text-[5px] font-semibold uppercase tracking-[0.06em] text-slate">
                       Подарочный сертификат
                     </span>
                   </div>
@@ -164,11 +166,12 @@ function CreditPage() {
                 <button
                   type="button"
                   onClick={() => proceed(selected.id, selected.name)}
-                  className="mt-3 flex w-full items-center justify-center gap-2.5 rounded-[10px] bg-navy py-3.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90"
+                  className="mt-3 flex w-full items-center justify-center gap-2.5 rounded-[10px] bg-navy py-3.5 text-[13px] font-bold text-white transition-opacity hover:opacity-90"
                 >
-                  <Landmark className="size-[18px]" strokeWidth={1.7} />
+                  <Landmark className="size-[17px]" strokeWidth={1.7} />
                   Выбрать условия и оформить кредит
                 </button>
+
               </div>
             </div>
 
