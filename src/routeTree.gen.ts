@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CardRouteImport } from './routes/card'
+import { Route as CreditRouteImport } from './routes/credit'
+import { Route as ErrorRouteImport } from './routes/error'
+import { Route as InstallmentRouteImport } from './routes/installment'
 import { Route as ProcessingRouteImport } from './routes/processing'
 import { Route as SbpRouteImport } from './routes/sbp'
 import { Route as SuccessRouteImport } from './routes/success'
@@ -25,6 +28,21 @@ const IndexRoute = IndexRouteImport.update({
 const CardRoute = CardRouteImport.update({
   id: '/card',
   path: '/card',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreditRoute = CreditRouteImport.update({
+  id: '/credit',
+  path: '/credit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ErrorRoute = ErrorRouteImport.update({
+  id: '/error',
+  path: '/error',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InstallmentRoute = InstallmentRouteImport.update({
+  id: '/installment',
+  path: '/installment',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProcessingRoute = ProcessingRouteImport.update({
@@ -56,6 +74,9 @@ const YandexSplitRoute = YandexSplitRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
+  '/credit': typeof CreditRoute
+  '/error': typeof ErrorRoute
+  '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
@@ -65,6 +86,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/card': typeof CardRoute
+  '/credit': typeof CreditRoute
+  '/error': typeof ErrorRoute
+  '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
@@ -75,6 +99,9 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/card': typeof CardRoute
+  '/credit': typeof CreditRoute
+  '/error': typeof ErrorRoute
+  '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
@@ -86,6 +113,9 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/card'
+    | '/credit'
+    | '/error'
+    | '/installment'
     | '/processing'
     | '/sbp'
     | '/success'
@@ -95,6 +125,9 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/card'
+    | '/credit'
+    | '/error'
+    | '/installment'
     | '/processing'
     | '/sbp'
     | '/success'
@@ -104,6 +137,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/card'
+    | '/credit'
+    | '/error'
+    | '/installment'
     | '/processing'
     | '/sbp'
     | '/success'
@@ -114,6 +150,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CardRoute: typeof CardRoute
+  CreditRoute: typeof CreditRoute
+  ErrorRoute: typeof ErrorRoute
+  InstallmentRoute: typeof InstallmentRoute
   ProcessingRoute: typeof ProcessingRoute
   SbpRoute: typeof SbpRoute
   SuccessRoute: typeof SuccessRoute
@@ -135,6 +174,27 @@ declare module '@tanstack/react-router' {
       path: '/card'
       fullPath: '/card'
       preLoaderRoute: typeof CardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/credit': {
+      id: '/credit'
+      path: '/credit'
+      fullPath: '/credit'
+      preLoaderRoute: typeof CreditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/error': {
+      id: '/error'
+      path: '/error'
+      fullPath: '/error'
+      preLoaderRoute: typeof ErrorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/installment': {
+      id: '/installment'
+      path: '/installment'
+      fullPath: '/installment'
+      preLoaderRoute: typeof InstallmentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/processing': {
@@ -178,6 +238,9 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CardRoute: CardRoute,
+  CreditRoute: CreditRoute,
+  ErrorRoute: ErrorRoute,
+  InstallmentRoute: InstallmentRoute,
   ProcessingRoute: ProcessingRoute,
   SbpRoute: SbpRoute,
   SuccessRoute: SuccessRoute,

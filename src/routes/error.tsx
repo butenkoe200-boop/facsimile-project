@@ -5,7 +5,6 @@ import errorBg from "@/assets/beach-processing.jpg";
 import { Footer, Header, HelpBar, OrderSummary } from "@/components/travel/Chrome";
 import { MasterCardMark } from "@/components/travel/Brand";
 import { ORDER } from "@/lib/order";
-import { usePaymentState } from "@/lib/payment-state";
 
 export const Route = createFileRoute("/error")({
   head: () => ({
@@ -36,7 +35,6 @@ const OTHER_METHODS = [
 
 function ErrorPage() {
   const navigate = useNavigate();
-  const { state } = usePaymentState();
 
   const ACTIONS = [
     {
@@ -227,10 +225,6 @@ function ErrorPage() {
               </div>
 
               <HelpBar text="Наши специалисты на связи 24/7" />
-
-              <p className="mt-3 text-center text-[10px] text-slate">
-                Способ оплаты: {state.method === "card" ? "Банковская карта" : "выберите другой способ"}
-              </p>
             </div>
           </div>
         </div>
