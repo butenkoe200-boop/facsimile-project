@@ -108,6 +108,10 @@ function applyAttrs(el: Element, lang: Lang) {
   }
 }
 
+function skip(el: Element) {
+  return SKIP_TAGS.has(el.tagName) || el.hasAttribute("data-no-translate");
+}
+
 function walk(root: Node, lang: Lang) {
   if (root.nodeType === Node.TEXT_NODE) {
     applyText(root as Text, lang);
@@ -115,13 +119,13 @@ function walk(root: Node, lang: Lang) {
   }
   if (root.nodeType !== Node.ELEMENT_NODE) return;
   const el = root as Element;
-  if (SKIP_TAGS.has(el.tagName)) return;
+  if (skip(el)) return;
 
   applyAttrs(el, lang);
 
   const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
     acceptNode: (n) =>
-      n.nodeType === Node.ELEMENT_NODE && SKIP_TAGS.has((n as Element).tagName)
+      n.nodeType === Node.ELEMENT_NODE && skip(n as Element)
         ? NodeFilter.FILTER_REJECT
         : NodeFilter.FILTER_ACCEPT,
   });
@@ -132,6 +136,7 @@ function walk(root: Node, lang: Lang) {
     current = walker.nextNode();
   }
 }
+
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>("ru");
