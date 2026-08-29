@@ -7,6 +7,7 @@ type PaymentState = {
   bankId: string;
   bankName: string;
   splitPlan: string;
+  creditOutcome: "approved" | "declined";
   email: string;
 };
 
@@ -15,6 +16,7 @@ const DEFAULT: PaymentState = {
   bankId: "alfa",
   bankName: "Альфа-Банк",
   splitPlan: "4",
+  creditOutcome: "approved",
   email: "erik.inkerman@gmail.com",
 };
 
