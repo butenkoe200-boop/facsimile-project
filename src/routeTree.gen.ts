@@ -19,10 +19,12 @@ import { Route as CreditFormRouteImport } from './routes/credit-form'
 import { Route as ErrorRouteImport } from './routes/error'
 import { Route as InstallmentRouteImport } from './routes/installment'
 import { Route as ProcessingRouteImport } from './routes/processing'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ReceiptRouteImport } from './routes/receipt'
 import { Route as ReceiptEmailRouteImport } from './routes/receipt-email'
 import { Route as SbpRouteImport } from './routes/sbp'
 import { Route as SuccessRouteImport } from './routes/success'
+import { Route as SupportRouteImport } from './routes/support'
 import { Route as ThanksRouteImport } from './routes/thanks'
 import { Route as WaitingRouteImport } from './routes/waiting'
 import { Route as YandexPayRouteImport } from './routes/yandex-pay'
@@ -78,6 +80,11 @@ const ProcessingRoute = ProcessingRouteImport.update({
   path: '/processing',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReceiptRoute = ReceiptRouteImport.update({
   id: '/receipt',
   path: '/receipt',
@@ -96,6 +103,11 @@ const SbpRoute = SbpRouteImport.update({
 const SuccessRoute = SuccessRouteImport.update({
   id: '/success',
   path: '/success',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThanksRoute = ThanksRouteImport.update({
@@ -130,10 +142,12 @@ export interface FileRoutesByFullPath {
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/profile': typeof ProfileRoute
   '/receipt': typeof ReceiptRoute
   '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
+  '/support': typeof SupportRoute
   '/thanks': typeof ThanksRoute
   '/waiting': typeof WaitingRoute
   '/yandex-pay': typeof YandexPayRoute
@@ -150,10 +164,12 @@ export interface FileRoutesByTo {
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/profile': typeof ProfileRoute
   '/receipt': typeof ReceiptRoute
   '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
+  '/support': typeof SupportRoute
   '/thanks': typeof ThanksRoute
   '/waiting': typeof WaitingRoute
   '/yandex-pay': typeof YandexPayRoute
@@ -171,10 +187,12 @@ export interface FileRoutesById {
   '/error': typeof ErrorRoute
   '/installment': typeof InstallmentRoute
   '/processing': typeof ProcessingRoute
+  '/profile': typeof ProfileRoute
   '/receipt': typeof ReceiptRoute
   '/receipt-email': typeof ReceiptEmailRoute
   '/sbp': typeof SbpRoute
   '/success': typeof SuccessRoute
+  '/support': typeof SupportRoute
   '/thanks': typeof ThanksRoute
   '/waiting': typeof WaitingRoute
   '/yandex-pay': typeof YandexPayRoute
@@ -193,10 +211,12 @@ export interface FileRouteTypes {
     | '/error'
     | '/installment'
     | '/processing'
+    | '/profile'
     | '/receipt'
     | '/receipt-email'
     | '/sbp'
     | '/success'
+    | '/support'
     | '/thanks'
     | '/waiting'
     | '/yandex-pay'
@@ -213,10 +233,12 @@ export interface FileRouteTypes {
     | '/error'
     | '/installment'
     | '/processing'
+    | '/profile'
     | '/receipt'
     | '/receipt-email'
     | '/sbp'
     | '/success'
+    | '/support'
     | '/thanks'
     | '/waiting'
     | '/yandex-pay'
@@ -233,10 +255,12 @@ export interface FileRouteTypes {
     | '/error'
     | '/installment'
     | '/processing'
+    | '/profile'
     | '/receipt'
     | '/receipt-email'
     | '/sbp'
     | '/success'
+    | '/support'
     | '/thanks'
     | '/waiting'
     | '/yandex-pay'
@@ -254,10 +278,12 @@ export interface RootRouteChildren {
   ErrorRoute: typeof ErrorRoute
   InstallmentRoute: typeof InstallmentRoute
   ProcessingRoute: typeof ProcessingRoute
+  ProfileRoute: typeof ProfileRoute
   ReceiptRoute: typeof ReceiptRoute
   ReceiptEmailRoute: typeof ReceiptEmailRoute
   SbpRoute: typeof SbpRoute
   SuccessRoute: typeof SuccessRoute
+  SupportRoute: typeof SupportRoute
   ThanksRoute: typeof ThanksRoute
   WaitingRoute: typeof WaitingRoute
   YandexPayRoute: typeof YandexPayRoute
@@ -336,6 +362,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/receipt': {
       id: '/receipt'
       path: '/receipt'
@@ -362,6 +395,13 @@ declare module '@tanstack/react-router' {
       path: '/success'
       fullPath: '/success'
       preLoaderRoute: typeof SuccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thanks': {
@@ -406,10 +446,12 @@ const rootRouteChildren: RootRouteChildren = {
   ErrorRoute: ErrorRoute,
   InstallmentRoute: InstallmentRoute,
   ProcessingRoute: ProcessingRoute,
+  ProfileRoute: ProfileRoute,
   ReceiptRoute: ReceiptRoute,
   ReceiptEmailRoute: ReceiptEmailRoute,
   SbpRoute: SbpRoute,
   SuccessRoute: SuccessRoute,
+  SupportRoute: SupportRoute,
   ThanksRoute: ThanksRoute,
   WaitingRoute: WaitingRoute,
   YandexPayRoute: YandexPayRoute,
