@@ -10,33 +10,63 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CardRouteImport } from './routes/card'
+import { Route as SbpRouteImport } from './routes/sbp'
+import { Route as YandexPayRouteImport } from './routes/yandex-pay'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CardRoute = CardRouteImport.update({
+  id: '/card',
+  path: '/card',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SbpRoute = SbpRouteImport.update({
+  id: '/sbp',
+  path: '/sbp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YandexPayRoute = YandexPayRouteImport.update({
+  id: '/yandex-pay',
+  path: '/yandex-pay',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/card': typeof CardRoute
+  '/sbp': typeof SbpRoute
+  '/yandex-pay': typeof YandexPayRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/card': typeof CardRoute
+  '/sbp': typeof SbpRoute
+  '/yandex-pay': typeof YandexPayRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/card': typeof CardRoute
+  '/sbp': typeof SbpRoute
+  '/yandex-pay': typeof YandexPayRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/card' | '/sbp' | '/yandex-pay'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/card' | '/sbp' | '/yandex-pay'
+  id: '__root__' | '/' | '/card' | '/sbp' | '/yandex-pay'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CardRoute: typeof CardRoute
+  SbpRoute: typeof SbpRoute
+  YandexPayRoute: typeof YandexPayRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +78,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/card': {
+      id: '/card'
+      path: '/card'
+      fullPath: '/card'
+      preLoaderRoute: typeof CardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sbp': {
+      id: '/sbp'
+      path: '/sbp'
+      fullPath: '/sbp'
+      preLoaderRoute: typeof SbpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/yandex-pay': {
+      id: '/yandex-pay'
+      path: '/yandex-pay'
+      fullPath: '/yandex-pay'
+      preLoaderRoute: typeof YandexPayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CardRoute: CardRoute,
+  SbpRoute: SbpRoute,
+  YandexPayRoute: YandexPayRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
