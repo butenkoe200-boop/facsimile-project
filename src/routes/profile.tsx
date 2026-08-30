@@ -57,23 +57,24 @@ function ProfilePage() {
               <span className="flex size-[32px] shrink-0 items-center justify-center rounded-[9px] bg-brandblue-soft">
                 <Landmark className="size-[16px] text-brandblue" strokeWidth={1.8} />
               </span>
-              <span className="flex-1">
+              <span className="min-w-0 flex-1">
                 <span className="block text-[12px] font-bold text-ink">{ORDER.numberTR}</span>
-                <span className="flex items-center gap-3 text-[10px] text-slate">
-                  <span className="flex items-center gap-1">
-                    <Wallet className="size-[12px]" strokeWidth={1.8} />
+                <span className="mt-0.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[10px] text-slate">
+                  <span className="flex items-center gap-1 whitespace-nowrap">
+                    <Wallet className="size-[12px] shrink-0" strokeWidth={1.8} />
                     {ORDER.amount}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <Clock className="size-[12px]" strokeWidth={1.8} />
+                  <span className="flex items-center gap-1 whitespace-nowrap">
+                    <Clock className="size-[12px] shrink-0" strokeWidth={1.8} />
                     {ORDER.dateTimeMsk}
                   </span>
                 </span>
               </span>
-              <span className="rounded-[6px] bg-success-soft px-2.5 py-1 text-[10px] font-semibold text-success">
+              <span className="shrink-0 whitespace-nowrap rounded-[6px] bg-success-soft px-2.5 py-1 text-[10px] font-semibold text-success">
                 Оплачено
               </span>
-              <ChevronRight className="size-[15px] shrink-0 text-slate" />
+              <ChevronRight className="hidden size-[15px] shrink-0 text-slate sm:block" />
+
             </Link>
           </div>
 
