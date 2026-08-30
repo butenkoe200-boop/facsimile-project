@@ -179,7 +179,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center justify-between border-t border-line pt-4">
+          <div className="mt-6 grid grid-cols-2 gap-y-3 border-t border-line pt-4 sm:flex sm:items-center sm:justify-between">
             {TRUST.map((t) => {
               const Icon = t.icon;
               return (
