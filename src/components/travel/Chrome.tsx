@@ -175,7 +175,7 @@ export function Footer({ variant = "method" }: { variant?: "method" | "full" }) 
           <div className="text-[11px] text-white/60">
             {variant === "full" ? "Служба поддержки 24/7" : "Служба поддержки"}
           </div>
-          <a href={`tel:${ORDER.phone}`} className="mt-0.5 block text-[16px] font-bold text-white">
+          <a href={`tel:${ORDER.phone}`} className="mt-0.5 block whitespace-nowrap text-[15px] font-bold text-white sm:text-[16px]">
             {ORDER.phone}
           </a>
           {variant === "full" ? (
