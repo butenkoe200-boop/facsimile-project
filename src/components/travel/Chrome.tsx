@@ -165,10 +165,13 @@ export function Footer({ variant = "method" }: { variant?: "method" | "full" }) 
           <TravelPayLogo tone="light" size="sm" />
           <p className="mt-1.5 text-[11px] text-white/60">Сервис безопасных платежей для путешествий</p>
           {variant === "full" && (
-            <p className="mt-1 flex items-center gap-1 text-[10.5px] text-white/50">
-              <Lock className="size-3" />
-              Данные защищены по стандарту <span className="text-brandblue">PCI DSS</span>
+            <p className="mt-1 flex flex-wrap items-center gap-x-1 text-[10.5px] text-white/50">
+              <Lock className="size-3 shrink-0" />
+              <span>
+                Данные защищены по стандарту <span className="whitespace-nowrap text-brandblue">PCI DSS</span>
+              </span>
             </p>
+
           )}
         </div>
         <div className="text-right">
