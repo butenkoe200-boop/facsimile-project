@@ -47,7 +47,7 @@ function InstallmentPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<CalendarDays className="size-5" strokeWidth={1.6} />}
@@ -57,7 +57,7 @@ function InstallmentPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[180px_1fr] gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6">
               <div>
                 <h2 className="text-[12px] font-bold text-ink">Как оформить рассрочку</h2>
                 <ol className="mt-3 space-y-3">

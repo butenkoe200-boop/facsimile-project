@@ -83,7 +83,7 @@ function YandexPayPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<YaPayMark size={22} />}
@@ -93,7 +93,7 @@ function YandexPayPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[1fr_296px] gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_296px] gap-5">
               <div className="min-w-0">
 
                 <h2 className="text-[12.5px] font-bold text-ink">Как оплатить через Яндекс Pay</h2>
@@ -122,7 +122,7 @@ function YandexPayPage() {
               <div className="min-w-0">
                 <h2 className="text-center text-[12px] font-semibold text-ink">Оплатить с помощью Яндекс Pay</h2>
                 <div className="mt-3 rounded-[14px] border border-line bg-surface-2 p-4">
-                  <div className="grid grid-cols-[132px_1fr] items-center gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-[132px_1fr] items-center gap-3">
                     <PhoneMock />
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5">

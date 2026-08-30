@@ -79,7 +79,7 @@ function ProfilePage() {
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-4">
             <h2 className="text-[12.5px] font-bold text-ink">Документы</h2>
-            <div className="mt-3 grid grid-cols-2 gap-3">
+            <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link
                 to="/receipt"
                 className="flex items-center gap-2.5 rounded-[12px] border border-line px-4 py-3 transition-colors hover:border-brandblue"

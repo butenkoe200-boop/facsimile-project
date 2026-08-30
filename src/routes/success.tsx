@@ -49,7 +49,7 @@ function SuccessPage() {
           <div className="absolute inset-0 bg-card/40" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-6 py-7 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-4 sm:px-6 py-7 shadow-raised backdrop-blur-sm">
               <div className="relative flex justify-center">
                 <span className="tp-confetti" aria-hidden="true" />
                 <span className="flex size-[62px] items-center justify-center rounded-full bg-success">
@@ -71,10 +71,10 @@ function SuccessPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-[1fr_260px] overflow-hidden rounded-[14px] border border-line">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-[1fr_260px] overflow-hidden rounded-[14px] border border-line">
                 <div className="p-5">
                   <h2 className="text-[13px] font-bold text-ink">Детали платежа</h2>
-                  <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3.5">
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3.5">
                     <div>
                       <div className="tp-label">Заказ</div>
                       <div className="tp-value">{ORDER.numberTP}</div>
@@ -114,7 +114,7 @@ function SuccessPage() {
                 />
               </div>
 
-              <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Link
                   to="/receipt"
                   className="flex items-center gap-3 rounded-[12px] border border-line bg-card px-4 py-3.5 transition-colors hover:border-navy"
@@ -161,7 +161,7 @@ function SuccessPage() {
                     </span>
                     <span className="text-[12px] font-bold text-ink">Что дальше?</span>
                   </div>
-                  <div className="grid flex-1 grid-cols-4 divide-x divide-line">
+                  <div className="grid flex-1 grid-cols-2 sm:grid-cols-4 divide-y divide-line sm:divide-x sm:divide-y-0">
                     {NEXT_STEPS.map((step) => {
                       const Icon = step.icon;
                       return (

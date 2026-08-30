@@ -72,7 +72,7 @@ function SplitPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<SplitMark size={20} />}
@@ -82,7 +82,7 @@ function SplitPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[190px_1fr] gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-6">
               <div>
                 <h2 className="text-[12px] font-bold text-ink">Как оплатить через Яндекс Сплит</h2>
                 <ol className="mt-3 space-y-3">
@@ -147,7 +147,7 @@ function SplitPage() {
                   })}
                 </div>
 
-                <div className="mt-3 grid grid-cols-3 divide-x divide-line rounded-[12px] border border-line bg-surface-2 py-3 text-center">
+                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[12px] border border-line bg-surface-2 py-3 text-center">
                   <div>
                     <div className="tp-label">Первый платёж</div>
                     <div className="mt-1 text-[13px] font-bold text-ink">{selected.first}</div>

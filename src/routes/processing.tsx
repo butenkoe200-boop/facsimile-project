@@ -46,7 +46,7 @@ function ProcessingPage() {
           <div className="absolute inset-0 bg-card/45" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/92 px-6 py-7 text-center shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/92 px-4 sm:px-6 py-7 text-center shadow-raised backdrop-blur-sm">
               <h1 className="text-[22px] font-bold text-ink">Обработка платежа</h1>
               <p className="mx-auto mt-2 max-w-[220px] text-[12px] leading-[1.45] text-slate">
                 Ваш платеж обрабатывается

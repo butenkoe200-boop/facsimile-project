@@ -49,7 +49,7 @@ function CreditPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<Plane className="size-5" strokeWidth={1.6} />}
@@ -59,7 +59,7 @@ function CreditPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[164px_1fr] gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-[164px_1fr] gap-5">
               <div className="min-w-0">
 
                 <h2 className="text-[12px] font-bold text-ink">Как оформить кредит</h2>

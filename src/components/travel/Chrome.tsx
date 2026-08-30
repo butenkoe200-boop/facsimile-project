@@ -9,7 +9,7 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
   const dark = tone === "dark";
   return (
     <header
-      className={`flex items-center justify-between px-6 py-4 ${
+      className={`flex items-center justify-between px-4 sm:px-6 py-4 ${
         dark ? "bg-navy" : "border-b border-line bg-card"
       }`}
     >
@@ -72,7 +72,7 @@ export function OrderSummary({
   numberValue?: string;
 }) {
   return (
-    <div className="mt-4 grid grid-cols-3 divide-x divide-line rounded-[14px] border border-line bg-card">
+    <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[14px] border border-line bg-card">
       <div className="px-5 py-4">
         <div className="tp-label">Номер заказа</div>
         <div className="mt-1.5 text-[17px] font-bold text-ink">{numberValue}</div>
@@ -143,7 +143,7 @@ export function FeatureQuad({
   items: { icon: ReactNode; title: string; text: string }[];
 }) {
   return (
-    <div className="mt-4 grid grid-cols-4 divide-x divide-line rounded-[14px] border border-line bg-card py-5">
+    <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[14px] border border-line bg-card py-5">
       {items.map((item) => (
         <div key={item.title} className="flex flex-col items-center px-3 text-center">
           <span className="flex size-9 items-center justify-center rounded-full border border-gold/40 text-gold">
@@ -159,7 +159,7 @@ export function FeatureQuad({
 
 export function Footer({ variant = "method" }: { variant?: "method" | "full" }) {
   return (
-    <footer className="bg-navy px-6 py-5">
+    <footer className="bg-navy px-4 sm:px-6 py-5">
       <div className="flex items-start justify-between gap-4">
         <div>
           <TravelPayLogo tone="light" size="sm" />

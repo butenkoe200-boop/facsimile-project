@@ -122,7 +122,7 @@ function CreditDeclinedPage() {
 
               <div className="mt-5 rounded-[14px] border border-line bg-card p-4">
                 <h2 className="text-[12.5px] font-bold text-ink">Выберите другой способ оплаты</h2>
-                <div className="mt-3 grid grid-cols-3 gap-3">
+                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {OPTIONS.map((option) => (
                     <div key={option.title} className="rounded-[12px] border border-line bg-card p-3.5">
                       <div className="flex items-center gap-2.5">
@@ -167,7 +167,7 @@ function CreditDeclinedPage() {
                 </Link>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 divide-x divide-line rounded-[14px] border border-line bg-card px-4 py-3.5">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[14px] border border-line bg-card px-4 py-3.5">
                 <div className="flex items-start gap-2.5 pr-4">
                   <Shield className="mt-0.5 size-[18px] shrink-0 text-success" strokeWidth={1.7} />
                   <div>

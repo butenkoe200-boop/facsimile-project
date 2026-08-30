@@ -80,8 +80,8 @@ function CreditApprovedPage() {
 
               <div className="mt-5 rounded-[14px] border border-line bg-card p-4">
                 <h2 className="text-[12.5px] font-bold text-ink">Ваше персональное предложение</h2>
-                <div className="mt-3 grid grid-cols-[1fr_1fr_240px] gap-4">
-                  <div className="col-span-2 grid grid-cols-2 gap-3">
+                <div className="mt-3 grid grid-cols-1 sm:grid-cols-[1fr_1fr_240px] gap-4">
+                  <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {OFFER.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -114,7 +114,7 @@ function CreditApprovedPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 gap-4">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-[14px] border border-line bg-card p-4">
                   <h2 className="text-[12px] font-bold text-ink">Что нужно сделать дальше?</h2>
                   <ol className="mt-3 space-y-2.5">
@@ -154,7 +154,7 @@ function CreditApprovedPage() {
                 Выбрать другие способы оплаты
               </Link>
 
-              <div className="mt-4 grid grid-cols-2 divide-x divide-line rounded-[14px] border border-line bg-card px-4 py-3.5">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[14px] border border-line bg-card px-4 py-3.5">
                 <div className="flex items-start gap-2.5 pr-4">
                   <Shield className="mt-0.5 size-[18px] shrink-0 text-success" strokeWidth={1.7} />
                   <div>
