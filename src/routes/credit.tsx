@@ -109,7 +109,7 @@ function CreditPage() {
                           type="button"
                           aria-pressed={active}
                           onClick={() => update({ method: "credit", bankId: bank.id, bankName: bank.name })}
-                          className={`flex w-full items-center gap-2 rounded-[12px] border px-3 py-3 text-left transition-colors ${
+                          className={`flex w-full flex-wrap items-center gap-2 rounded-[12px] border px-3 py-3 text-left transition-colors ${
                             active ? "border-gold bg-warning-soft/50" : "border-line bg-card hover:border-gold/60"
                           }`}
                         >

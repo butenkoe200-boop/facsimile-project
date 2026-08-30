@@ -124,7 +124,7 @@ function SplitPage() {
                         type="button"
                         aria-pressed={active}
                         onClick={() => update({ splitPlan: plan.id })}
-                        className={`flex w-full items-center gap-4 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
+                        className={`flex w-full flex-wrap items-center gap-x-4 gap-y-2 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
                           active
                             ? "border-[oklch(0.5_0.16_285)] bg-[oklch(0.5_0.16_285)]/5"
                             : "border-line bg-card hover:border-[oklch(0.5_0.16_285)]/50"

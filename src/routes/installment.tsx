@@ -103,7 +103,7 @@ function InstallmentPage() {
                       <button
                         type="button"
                         onClick={() => pick(bank.id, bank.name)}
-                        className={`flex w-full items-center gap-4 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
+                        className={`flex w-full flex-wrap items-center gap-x-4 gap-y-2 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
                           bank.recommended
                             ? "border-gold bg-warning-soft/50"
                             : "border-line bg-card hover:border-gold/60"
