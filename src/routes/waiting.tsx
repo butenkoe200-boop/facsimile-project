@@ -126,7 +126,7 @@ function WaitingPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 gap-4">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="rounded-[14px] border border-line bg-card p-4">
                   <h2 className="text-[12px] font-bold text-ink">Детали платежа</h2>
                   <dl className="mt-3 space-y-2.5">

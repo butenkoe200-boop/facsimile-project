@@ -140,7 +140,7 @@ function ErrorPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 gap-4">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <h2 className="text-[12px] font-bold text-ink">Что можно сделать</h2>
                   <div className="mt-2.5 space-y-2 rounded-[12px] border border-line bg-card p-1.5">
@@ -178,7 +178,7 @@ function ErrorPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-2 gap-4">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex items-start gap-2.5 rounded-[12px] bg-brandblue-soft px-4 py-3">
                   <Info className="mt-0.5 size-[16px] shrink-0 text-brandblue" strokeWidth={1.8} />
                   <div>
@@ -202,7 +202,7 @@ function ErrorPage() {
 
               <div className="mt-4 rounded-[12px] border border-line bg-card p-4">
                 <h2 className="text-[12px] font-bold text-ink">Другие способы оплаты</h2>
-                <div className="mt-2.5 grid grid-cols-5 gap-2">
+                <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-5 gap-2">
                   {OTHER_METHODS.map((method) => (
                     <Link
                       key={method.title}

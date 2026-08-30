@@ -47,7 +47,7 @@ function InstallmentPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<CalendarDays className="size-5" strokeWidth={1.6} />}
@@ -57,7 +57,7 @@ function InstallmentPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[180px_1fr] gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6">
               <div>
                 <h2 className="text-[12px] font-bold text-ink">Как оформить рассрочку</h2>
                 <ol className="mt-3 space-y-3">
@@ -103,26 +103,27 @@ function InstallmentPage() {
                       <button
                         type="button"
                         onClick={() => pick(bank.id, bank.name)}
-                        className={`flex w-full items-center gap-4 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
+                        className={`flex w-full flex-wrap items-center gap-x-4 gap-y-2 rounded-[12px] border px-4 py-3.5 text-left transition-colors ${
                           bank.recommended
                             ? "border-gold bg-warning-soft/50"
                             : "border-line bg-card hover:border-gold/60"
                         }`}
                       >
                         <BankMark id={bank.id} size={30} />
-                        <span className="w-[120px] shrink-0">
+                        <span className="w-[calc(100%-46px)] shrink-0 sm:w-[120px]">
                           <span className="block text-[12px] font-bold text-ink">{bank.name}</span>
                           <span className="block text-[9.5px] text-gold-deep">{bank.decision}</span>
                         </span>
-                        <span className="w-[92px] shrink-0">
+                        <span className="w-[52%] shrink-0 sm:w-[92px]">
                           <span className="block text-[11.5px] font-semibold text-ink">{bank.term}</span>
                           <span className="block text-[10px] text-slate">{bank.monthly}</span>
                         </span>
-                        <span className="flex-1">
+                        <span className="flex-1 basis-[30%]">
                           <span className="block text-[11.5px] font-semibold text-ink">0 ₽</span>
                           <span className="block text-[10px] text-slate">переплата</span>
                         </span>
-                        <ChevronRight className="size-4 shrink-0 text-slate" />
+                        <ChevronRight className="hidden size-4 shrink-0 text-slate sm:block" />
+
                       </button>
                     </div>
                   ))}

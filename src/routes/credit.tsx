@@ -49,7 +49,7 @@ function CreditPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<Plane className="size-5" strokeWidth={1.6} />}
@@ -59,7 +59,7 @@ function CreditPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-[164px_1fr] gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-[164px_1fr] gap-5">
               <div className="min-w-0">
 
                 <h2 className="text-[12px] font-bold text-ink">Как оформить кредит</h2>
@@ -109,28 +109,29 @@ function CreditPage() {
                           type="button"
                           aria-pressed={active}
                           onClick={() => update({ method: "credit", bankId: bank.id, bankName: bank.name })}
-                          className={`flex w-full items-center gap-2 rounded-[12px] border px-3 py-3 text-left transition-colors ${
+                          className={`flex w-full flex-wrap items-center gap-2 rounded-[12px] border px-3 py-3 text-left transition-colors ${
                             active ? "border-gold bg-warning-soft/50" : "border-line bg-card hover:border-gold/60"
                           }`}
                         >
                           <BankMark id={bank.id} size={26} />
-                          <span className="w-[92px] shrink-0">
+                          <span className="w-[calc(100%-40px)] shrink-0 sm:w-[92px]">
                             <span className="block text-[11px] font-bold leading-tight text-ink">{bank.name}</span>
                             <span className="block text-[9px] leading-tight text-gold-deep">{bank.decision}</span>
                           </span>
-                          <span className="w-[86px] shrink-0">
+                          <span className="w-[30%] shrink-0 sm:w-[86px]">
                             <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.term}</span>
                             <span className="block text-[9px] leading-tight text-slate">Срок кредита</span>
                           </span>
-                          <span className="w-[54px] shrink-0">
+                          <span className="w-[26%] shrink-0 sm:w-[54px]">
                             <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.rate}</span>
                             <span className="block text-[9px] leading-tight text-slate">Ставка годовых</span>
                           </span>
-                          <span className="min-w-0 flex-1">
+                          <span className="min-w-0 flex-1 basis-[26%]">
                             <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.monthly}</span>
                             <span className="block text-[9px] leading-tight text-slate">Платёж</span>
                           </span>
-                          <ChevronRight className="size-4 shrink-0 text-slate" />
+                          <ChevronRight className="hidden size-4 shrink-0 text-slate sm:block" />
+
                         </button>
                       </div>
                     );

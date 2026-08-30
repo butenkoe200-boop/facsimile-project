@@ -112,8 +112,8 @@ function CreditFormPage() {
 
         <div className="bg-card">
           <div className="relative">
-            <div className="grid grid-cols-[1fr_290px] items-start">
-              <div className="px-6 pt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_290px] items-start">
+              <div className="px-4 sm:px-6 pt-5">
                 <BackLink
                   to={state.method === "installment" ? "/installment" : "/credit"}
                   label="Назад к выбору банка"
@@ -137,10 +137,10 @@ function CreditFormPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-[1fr_290px] gap-5 px-6 pb-6 pt-5">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_290px] gap-5 px-4 sm:px-6 pb-6 pt-5">
             <form onSubmit={submit}>
               <h2 className="text-[12.5px] font-bold text-ink">Личные данные</h2>
-              <div className="mt-2.5 grid grid-cols-3 gap-3">
+              <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Field label="Фамилия" value={form.lastName} onChange={set("lastName")} />
                 <Field label="Имя" value={form.firstName} onChange={set("firstName")} />
                 <Field label="Отчество" value={form.middleName} onChange={set("middleName")} />
@@ -148,13 +148,13 @@ function CreditFormPage() {
                 <Field label="Гражданство" value={form.citizenship} onChange={set("citizenship")} icon="select" />
                 <Field label="ИНН (необязательно)" value={form.inn} onChange={set("inn")} />
               </div>
-              <div className="mt-3 grid grid-cols-2 gap-3">
+              <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label="Мобильный телефон" value={form.phone} onChange={set("phone")} />
                 <Field label="Электронная почта" value={form.email} onChange={set("email")} type="email" />
               </div>
 
               <h2 className="mt-5 text-[12.5px] font-bold text-ink">Паспортные данные</h2>
-              <div className="mt-2.5 grid grid-cols-3 gap-3">
+              <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Field label="Серия и номер паспорта" value={form.passport} onChange={set("passport")} />
                 <Field label="Дата выдачи" value={form.issueDate} onChange={set("issueDate")} icon="calendar" />
                 <Field label="Код подразделения" value={form.unitCode} onChange={set("unitCode")} />
@@ -164,7 +164,7 @@ function CreditFormPage() {
               </div>
 
               <h2 className="mt-5 text-[12.5px] font-bold text-ink">Адрес регистрации</h2>
-              <div className="mt-2.5 grid grid-cols-3 gap-3">
+              <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Field label="Индекс" value={form.zip} onChange={set("zip")} />
                 <Field label="Город" value={form.city} onChange={set("city")} />
                 <Field label="Улица" value={form.street} onChange={set("street")} />
@@ -174,7 +174,7 @@ function CreditFormPage() {
               </div>
 
               <h2 className="mt-5 text-[12.5px] font-bold text-ink">Информация о доходе</h2>
-              <div className="mt-2.5 grid grid-cols-3 gap-3">
+              <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Field label="Тип занятости" value={form.employment} onChange={set("employment")} icon="select" />
                 <Field label="Ежемесячный доход" value={form.income} onChange={set("income")} />
                 <Field
@@ -183,12 +183,12 @@ function CreditFormPage() {
                   onChange={set("extraIncome")}
                 />
               </div>
-              <div className="mt-3 grid grid-cols-2 gap-3">
+              <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <Field label="Название организации" value={form.organization} onChange={set("organization")} />
                 <Field label="Должность" value={form.position} onChange={set("position")} />
               </div>
 
-              <div className="mt-5 grid grid-cols-2 items-start gap-4">
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 items-start gap-4">
                 <DataProtectedNote />
                 <div>
                   <button

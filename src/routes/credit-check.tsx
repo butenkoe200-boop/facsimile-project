@@ -65,7 +65,7 @@ function CreditCheckPage() {
           <div className="absolute inset-0 bg-card/45" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/92 px-6 py-6 backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/92 px-4 sm:px-6 py-6 backdrop-blur-sm">
               <BackLink to="/credit-form" label="Назад к анкете" variant="arrow" />
 
               <h1 className="mt-3 text-center text-[21px] font-bold text-ink">Мы приняли вашу заявку!</h1>
@@ -107,7 +107,7 @@ function CreditCheckPage() {
                 </div>
               </div>
 
-              <div className="mt-5 grid grid-cols-[1fr_240px] gap-4">
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-[1fr_240px] gap-4">
                 <div className="rounded-[14px] border border-line bg-card p-3.5">
                   <ul className="space-y-2">
                     {STAGES.map((stage, index) => {
@@ -167,7 +167,7 @@ function CreditCheckPage() {
 
               <HelpBar text="Наши специалисты на связи 24/7" />
 
-              <div className="mt-4 grid grid-cols-4 divide-x divide-line border-t border-line pt-4">
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 divide-y divide-line sm:divide-x sm:divide-y-0 border-t border-line pt-4">
                 {CREDIT_FOOTER_FEATURES.map((feature) => (
                   <div key={feature.title} className="flex items-start gap-2 px-3">
                     <span className="mt-0.5 flex size-[26px] shrink-0 items-center justify-center rounded-full bg-surface text-brandblue">

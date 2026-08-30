@@ -49,7 +49,7 @@ function SuccessPage() {
           <div className="absolute inset-0 bg-card/40" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-6 py-7 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-4 sm:px-6 py-7 shadow-raised backdrop-blur-sm">
               <div className="relative flex justify-center">
                 <span className="tp-confetti" aria-hidden="true" />
                 <span className="flex size-[62px] items-center justify-center rounded-full bg-success">
@@ -71,10 +71,10 @@ function SuccessPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-[1fr_260px] overflow-hidden rounded-[14px] border border-line">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-[1fr_260px] overflow-hidden rounded-[14px] border border-line">
                 <div className="p-5">
                   <h2 className="text-[13px] font-bold text-ink">Детали платежа</h2>
-                  <div className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3.5">
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3.5">
                     <div>
                       <div className="tp-label">Заказ</div>
                       <div className="tp-value">{ORDER.numberTP}</div>
@@ -114,7 +114,7 @@ function SuccessPage() {
                 />
               </div>
 
-              <div className="mt-4 grid grid-cols-3 gap-3">
+              <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
                 <Link
                   to="/receipt"
                   className="flex items-center gap-3 rounded-[12px] border border-line bg-card px-4 py-3.5 transition-colors hover:border-navy"
@@ -154,18 +154,19 @@ function SuccessPage() {
               </div>
 
               <div className="mt-4 rounded-[14px] bg-surface px-4 py-4">
-                <div className="flex items-center gap-8">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-8">
                   <div className="flex shrink-0 items-center gap-2.5">
                     <span className="flex size-9 items-center justify-center rounded-full bg-brandblue-soft">
                       <Plane className="size-[18px] text-brandblue" strokeWidth={1.7} />
                     </span>
                     <span className="text-[12px] font-bold text-ink">Что дальше?</span>
                   </div>
-                  <div className="grid flex-1 grid-cols-4 divide-x divide-line">
+                  <div className="grid flex-1 grid-cols-1 gap-y-2 sm:grid-cols-4 sm:gap-y-0 sm:divide-x sm:divide-line">
                     {NEXT_STEPS.map((step) => {
                       const Icon = step.icon;
                       return (
-                        <div key={step.title} className="flex items-center gap-2 px-3">
+                        <div key={step.title} className="flex items-center gap-2 sm:px-3">
+
                           <span
                             className={`flex size-[22px] shrink-0 items-center justify-center rounded-full ${
                               step.done ? "bg-success-soft text-success" : "bg-brandblue-soft text-brandblue"

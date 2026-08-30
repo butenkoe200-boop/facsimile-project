@@ -64,7 +64,7 @@ function ThanksPage() {
         <Header tone="dark" />
 
         <div className="bg-navy px-5 pb-5">
-          <div className="flex items-center justify-between gap-4 rounded-[14px] bg-card px-6 py-4">
+          <div className="flex items-center justify-between gap-4 rounded-[14px] bg-card px-4 sm:px-6 py-4">
             <div>
               <div className="tp-label">Номер заказа</div>
               <div className="mt-1 text-[17px] font-bold text-ink">{ORDER.numberTR}</div>
@@ -133,7 +133,7 @@ function ThanksPage() {
             </p>
 
 
-            <div className="mt-5 grid grid-cols-5 gap-3">
+            <div className="mt-5 grid grid-cols-2 sm:grid-cols-5 gap-3">
               {PERKS.map((perk) => {
                 const Icon = perk.icon;
                 return (
@@ -149,7 +149,7 @@ function ThanksPage() {
               })}
             </div>
 
-            <div className="mt-5 grid grid-cols-2 items-start gap-4">
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 items-start gap-4">
               <div className="rounded-[14px] bg-card/95 p-4 shadow-card">
                 <h2 className="text-[12.5px] font-bold text-ink">Детали вашего заказа</h2>
                 <dl className="mt-3 space-y-2.5">
@@ -176,7 +176,7 @@ function ThanksPage() {
                   })}
                 </dl>
 
-                <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <Link
                     to="/receipt"
                     className="flex items-center justify-center gap-2 rounded-[10px] border border-brandblue bg-card py-2.5 text-[11px] font-semibold text-brandblue transition-colors hover:bg-brandblue-soft"

@@ -96,7 +96,7 @@ function SbpPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<SbpMark size={20} />}
@@ -106,7 +106,7 @@ function SbpPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Steps */}
               <div>
                 <h2 className="text-[12.5px] font-bold text-ink">Как оплатить через СБП</h2>
@@ -142,7 +142,7 @@ function SbpPage() {
                 <div className="mt-4 w-full border-t border-line pt-3 text-center text-[11px] text-slate">
                   Или выберите ваш банк
                 </div>
-                <div className="mt-2.5 grid w-full grid-cols-5 gap-1.5">
+                <div className="mt-2.5 grid w-full grid-cols-2 sm:grid-cols-5 gap-1.5">
                   {BANKS.map((bank) => (
                     <button
                       key={bank.id}

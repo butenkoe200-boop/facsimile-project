@@ -63,7 +63,7 @@ function CardPage() {
       <div className="tp-frame">
         <Header tone="light" />
 
-        <div className="px-6 pb-6 pt-4">
+        <div className="px-4 sm:px-6 pb-6 pt-4">
           <BackLink to="/" label="Назад к способам оплаты" />
           <PageTitle
             icon={<CreditCard className="size-5" strokeWidth={1.6} />}
@@ -100,7 +100,7 @@ function CardPage() {
               </div>
             </div>
 
-            <div className="mt-4 grid grid-cols-2 gap-4">
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="card-expiry" className="block text-[11.5px] font-semibold text-ink">
                   Срок действия

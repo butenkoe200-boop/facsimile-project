@@ -112,7 +112,7 @@ function Index() {
             className="absolute inset-0 size-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/45 via-navy/10 to-transparent" />
-          <div className="relative px-6 pb-4 pt-7">
+          <div className="relative px-4 sm:px-6 pb-4 pt-7">
             <h1 className="max-w-[260px] text-[26px] font-bold leading-[1.15] text-white drop-shadow-[0_1px_8px_oklch(0.2_0.05_259/0.5)]">
               Оплата вашего путешествия
             </h1>
@@ -154,10 +154,10 @@ function Index() {
         </section>
 
         {/* Methods */}
-        <section className="bg-card px-6 py-6">
+        <section className="bg-card px-4 sm:px-6 py-6">
           <h2 className="text-[16px] font-bold text-ink">Выберите способ оплаты</h2>
 
-          <div className="mt-4 grid grid-cols-3 gap-3">
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
             {METHODS.map((m) => (
               <Link
                 key={m.id}
@@ -179,7 +179,7 @@ function Index() {
             ))}
           </div>
 
-          <div className="mt-6 flex items-center justify-between border-t border-line pt-4">
+          <div className="mt-6 grid grid-cols-2 gap-y-3 border-t border-line pt-4 sm:flex sm:items-center sm:justify-between">
             {TRUST.map((t) => {
               const Icon = t.icon;
               return (

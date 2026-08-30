@@ -107,7 +107,7 @@ function SupportPage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="grid grid-cols-[1fr_270px] gap-5 bg-surface px-5 py-5">
+        <div className="grid grid-cols-1 sm:grid-cols-[1fr_270px] gap-5 bg-surface px-5 py-5">
           <div className="flex flex-col">
             <div className="flex items-start gap-2.5">
               <BackLink to="/" label="" />
