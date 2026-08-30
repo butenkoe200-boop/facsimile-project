@@ -110,19 +110,20 @@ function InstallmentPage() {
                         }`}
                       >
                         <BankMark id={bank.id} size={30} />
-                        <span className="w-[120px] shrink-0">
+                        <span className="w-[calc(100%-46px)] shrink-0 sm:w-[120px]">
                           <span className="block text-[12px] font-bold text-ink">{bank.name}</span>
                           <span className="block text-[9.5px] text-gold-deep">{bank.decision}</span>
                         </span>
-                        <span className="w-[92px] shrink-0">
+                        <span className="w-[52%] shrink-0 sm:w-[92px]">
                           <span className="block text-[11.5px] font-semibold text-ink">{bank.term}</span>
                           <span className="block text-[10px] text-slate">{bank.monthly}</span>
                         </span>
-                        <span className="flex-1">
+                        <span className="flex-1 basis-[30%]">
                           <span className="block text-[11.5px] font-semibold text-ink">0 ₽</span>
                           <span className="block text-[10px] text-slate">переплата</span>
                         </span>
-                        <ChevronRight className="size-4 shrink-0 text-slate" />
+                        <ChevronRight className="hidden size-4 shrink-0 text-slate sm:block" />
+
                       </button>
                     </div>
                   ))}
