@@ -114,23 +114,24 @@ function CreditPage() {
                           }`}
                         >
                           <BankMark id={bank.id} size={26} />
-                          <span className="w-[92px] shrink-0">
+                          <span className="w-[calc(100%-40px)] shrink-0 sm:w-[92px]">
                             <span className="block text-[11px] font-bold leading-tight text-ink">{bank.name}</span>
                             <span className="block text-[9px] leading-tight text-gold-deep">{bank.decision}</span>
                           </span>
-                          <span className="w-[86px] shrink-0">
+                          <span className="w-[30%] shrink-0 sm:w-[86px]">
                             <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.term}</span>
                             <span className="block text-[9px] leading-tight text-slate">Срок кредита</span>
                           </span>
-                          <span className="w-[54px] shrink-0">
+                          <span className="w-[26%] shrink-0 sm:w-[54px]">
                             <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.rate}</span>
                             <span className="block text-[9px] leading-tight text-slate">Ставка годовых</span>
                           </span>
-                          <span className="min-w-0 flex-1">
+                          <span className="min-w-0 flex-1 basis-[26%]">
                             <span className="block text-[10px] font-semibold leading-tight text-ink">{bank.monthly}</span>
                             <span className="block text-[9px] leading-tight text-slate">Платёж</span>
                           </span>
-                          <ChevronRight className="size-4 shrink-0 text-slate" />
+                          <ChevronRight className="hidden size-4 shrink-0 text-slate sm:block" />
+
                         </button>
                       </div>
                     );
