@@ -2,6 +2,9 @@ import { Globe } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { useLanguage, type Lang } from "@/lib/i18n";
+import gmLogoDark from "@/assets/gm-logo.png.asset.json";
+import gmLogoLight from "@/assets/gm-logo-light.png.asset.json";
+import ntsEmblem from "@/assets/nts.png.asset.json";
 
 
 export function GmLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
