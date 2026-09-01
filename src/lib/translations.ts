@@ -4,6 +4,8 @@
  */
 export const RU_EN: Record<string, string> = {
   // --- Общие / шапка / подвал ---
+  "Travel Pay создан по инициативе": "Travel Pay was created on the initiative of",
+  "Национального туристического союза РФ": "the National Tourism Union of the Russian Federation",
   "Оплата вашего путешествия": "Payment for your trip",
   "Быстро, удобно, безопасно": "Fast, convenient, secure",
   "Номер заказа": "Order number",
