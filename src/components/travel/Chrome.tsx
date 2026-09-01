@@ -2,21 +2,24 @@ import { Link, useRouter } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { ChevronLeft, ArrowLeft, Lock, Shield, Home, FileText, Headphones, User } from "lucide-react";
 
-import { GmLogo, LangSelector, TravelPayLogo } from "./Brand";
+import { GmLogo, LangSelector, NtsBar, TravelPayLogo } from "./Brand";
 import { ORDER } from "@/lib/order";
 
 export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
   const dark = tone === "dark";
   return (
-    <header
-      className={`flex items-center justify-between px-4 sm:px-6 py-4 ${
-        dark ? "bg-navy" : "border-b border-line bg-card"
-      }`}
-    >
-      <GmLogo tone={dark ? "light" : "dark"} />
-      <TravelPayLogo tone={dark ? "light" : "dark"} />
-      <LangSelector tone={dark ? "light" : "dark"} />
-    </header>
+    <>
+      <NtsBar />
+      <header
+        className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-4 ${
+          dark ? "bg-navy" : "border-b border-line bg-card"
+        }`}
+      >
+        <GmLogo tone={dark ? "light" : "dark"} />
+        <TravelPayLogo tone={dark ? "light" : "dark"} />
+        <LangSelector tone={dark ? "light" : "dark"} />
+      </header>
+    </>
   );
 }
 
