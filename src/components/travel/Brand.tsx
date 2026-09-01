@@ -19,9 +19,9 @@ export function GmLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
 
 export function NtsBar() {
   return (
-    <div className="bg-navy px-3 pt-3 sm:px-4">
-      <div className="flex items-center gap-3 rounded-[10px] border border-white/10 bg-[oklch(0.98_0.005_250)] px-3 py-2 sm:px-4">
-        <img src={ntsEmblem.url} alt="Национальный туристический союз РФ" className="h-[30px] w-auto shrink-0" />
+    <div className="bg-navy px-4 py-3 sm:px-6">
+      <div className="flex w-full items-center gap-3 rounded-xl border border-white/10 bg-[oklch(0.98_0.005_250)] px-3 py-2.5 sm:px-4">
+        <img src={ntsEmblem.url} alt="Национальный туристический союз РФ" className="h-[40px] w-auto shrink-0" />
         <div className="min-w-0">
           <div className="text-[10.5px] leading-tight text-slate">Travel Pay создан по инициативе</div>
           <div className="text-[11px] font-bold uppercase leading-tight tracking-[0.01em] text-navy sm:text-[12px]">
@@ -32,6 +32,7 @@ export function NtsBar() {
     </div>
   );
 }
+
 
 export function TravelPayMark({ size = 26 }: { size?: number }) {
   return (
