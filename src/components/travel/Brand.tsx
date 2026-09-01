@@ -5,21 +5,27 @@ import { useLanguage, type Lang } from "@/lib/i18n";
 
 
 export function GmLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
-  const title = tone === "light" ? "text-white" : "text-ink";
-  const sub = tone === "light" ? "text-white/70" : "text-slate";
   return (
-    <div className="flex items-center gap-2">
-      <span
-        className={`font-serif text-[26px] leading-none tracking-tight ${title}`}
-        style={{ fontFamily: '"Playfair Display", Georgia, serif' }}
-      >
-        GM
-      </span>
-      <span className={`text-[8.5px] font-semibold uppercase leading-[1.25] tracking-[0.08em] ${sub}`}>
-        International
-        <br />
-        Travel
-      </span>
+    <img
+      src={tone === "light" ? gmLogoLight.url : gmLogoDark.url}
+      alt="GM Travel International"
+      className="h-[34px] w-auto shrink-0 sm:h-[38px]"
+    />
+  );
+}
+
+export function NtsBar() {
+  return (
+    <div className="bg-navy px-3 pt-3 sm:px-4">
+      <div className="flex items-center gap-3 rounded-[10px] border border-white/10 bg-[oklch(0.98_0.005_250)] px-3 py-2 sm:px-4">
+        <img src={ntsEmblem.url} alt="Национальный туристический союз РФ" className="h-[30px] w-auto shrink-0" />
+        <div className="min-w-0">
+          <div className="text-[10.5px] leading-tight text-slate">Travel Pay создан по инициативе</div>
+          <div className="text-[11px] font-bold uppercase leading-tight tracking-[0.01em] text-navy sm:text-[12px]">
+            Национального туристического союза РФ
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
