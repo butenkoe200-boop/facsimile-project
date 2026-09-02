@@ -11,7 +11,7 @@ export default defineConfig({
   // В среде Lovable всегда cloudflare-module (переменная игнорируется).
   // На своём VPS: `npm run build:vps` (NITRO_PRESET=node-server) → .output/server/index.mjs
   nitro: {
-    preset: process.env.NITRO_PRESET || "cloudflare-module",
+    preset: process.env["NITRO_PRESET"] || "cloudflare-module",
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
