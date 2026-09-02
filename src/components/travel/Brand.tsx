@@ -2,15 +2,15 @@ import { Globe } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { useLanguage, type Lang } from "@/lib/i18n";
-import gmLogoDark from "@/assets/gm-logo.png.asset.json";
-import gmLogoLight from "@/assets/gm-logo-light.png.asset.json";
-import ntsEmblem from "@/assets/nts.png.asset.json";
+import gmLogoDark from "@/assets/gm-logo.png";
+import gmLogoLight from "@/assets/gm-logo-light.png";
+import ntsEmblem from "@/assets/nts.png";
 
 
 export function GmLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
   return (
     <img
-      src={tone === "light" ? gmLogoLight.url : gmLogoDark.url}
+      src={tone === "light" ? gmLogoLight : gmLogoDark}
       alt="GM Travel International"
       className="h-[34px] w-auto shrink-0 sm:h-[38px]"
     />
@@ -21,7 +21,7 @@ export function NtsBar() {
   return (
     <div className="bg-navy px-4 py-3 sm:px-6">
       <div className="flex w-full items-center gap-3 rounded-xl border border-white/10 bg-[oklch(0.98_0.005_250)] px-3 py-2.5 sm:px-4">
-        <img src={ntsEmblem.url} alt="Национальный туристический союз РФ" className="h-[40px] w-auto shrink-0" />
+        <img src={ntsEmblem} alt="Национальный туристический союз РФ" className="h-[40px] w-auto shrink-0" />
         <div className="min-w-0">
           <div className="text-[10.5px] leading-tight text-slate">Travel Pay создан по инициативе</div>
           <div className="text-[11px] font-bold uppercase leading-tight tracking-[0.01em] text-navy sm:text-[12px]">
