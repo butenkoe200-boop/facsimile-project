@@ -7,10 +7,11 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Целевая платформа сборки. По умолчанию — Cloudflare (среда Lovable).
-  // Для собственного VPS: NITRO_PRESET=node-server npm run build → .output/server/index.mjs
+  // Целевая платформа сборки.
+  // В среде Lovable всегда cloudflare-module (переменная игнорируется).
+  // На своём VPS: `npm run build:vps` (NITRO_PRESET=node-server) → .output/server/index.mjs
   nitro: {
-    preset: process.env.NITRO_PRESET ?? "cloudflare-module",
+    preset: process.env.NITRO_PRESET || "cloudflare-module",
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
