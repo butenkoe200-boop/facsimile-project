@@ -106,7 +106,7 @@ function SbpPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-[260px_300px_minmax(0,1fr)] lg:gap-8">
               {/* Steps */}
               <div>
                 <h2 className="text-[12.5px] font-bold text-ink">Как оплатить через СБП</h2>
@@ -133,13 +133,16 @@ function SbpPage() {
               </div>
 
               {/* QR */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center lg:contents">
+                <div className="flex w-full flex-col items-center">
                 <h2 className="text-[12px] font-semibold text-ink">Отсканируйте QR-код для оплаты</h2>
                 <div className="mt-3 w-full rounded-[14px] border border-gold/50 bg-card p-2">
                   <QrCode />
                 </div>
 
-                <div className="mt-4 w-full border-t border-line pt-3 text-center text-[11px] text-slate">
+                </div>
+                <div className="w-full lg:self-start">
+                <div className="mt-4 w-full border-t border-line pt-3 text-center text-[11px] text-slate lg:mt-0 lg:border-t-0 lg:pt-0">
                   Или выберите ваш банк
                 </div>
                 <div className="mt-2.5 grid w-full grid-cols-2 sm:grid-cols-5 gap-1.5">
@@ -160,6 +163,7 @@ function SbpPage() {
                       <span className="text-[8.5px] leading-tight text-ink">{bank.label}</span>
                     </button>
                   ))}
+                </div>
                 </div>
               </div>
             </div>

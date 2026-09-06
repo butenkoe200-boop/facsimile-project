@@ -72,7 +72,8 @@ function CardPage() {
           />
           <OrderSummary />
 
-          <form onSubmit={submit} className="mt-4 rounded-[14px] border border-line bg-card p-5 lg:mx-auto lg:max-w-[760px] lg:p-6">
+          <div className="mt-4 lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-5">
+          <form onSubmit={submit} className="rounded-[14px] border border-line bg-card p-5 lg:p-6">
             <div className="flex items-center justify-between">
               <span className="text-[12.5px] font-semibold text-ink">Мы принимаем к оплате</span>
               <span className="flex items-center gap-3">
@@ -175,6 +176,7 @@ function CardPage() {
           </form>
 
           <FeatureQuad
+            desktop="column"
             items={[
               {
                 icon: <Shield className="size-[18px]" strokeWidth={1.6} />,
@@ -198,6 +200,7 @@ function CardPage() {
               },
             ]}
           />
+          </div>
         </div>
 
         <Footer variant="method" />

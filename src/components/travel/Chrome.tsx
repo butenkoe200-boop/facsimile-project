@@ -11,12 +11,18 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
     <>
       <NtsBar />
       <header
-        className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-4 ${
-          dark ? "bg-navy" : "border-b border-line bg-card"
+        className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-4 lg:h-[88px] lg:px-10 lg:py-0 ${
+          dark ? "bg-navy lg:border-b lg:border-line lg:bg-card" : "border-b border-line bg-card"
         }`}
       >
         <GmLogo tone={dark ? "light" : "dark"} />
         <TravelPayLogo tone={dark ? "light" : "dark"} />
+        <nav className="hidden items-center gap-9 lg:flex" aria-label="Основная навигация">
+          <span className="text-[12px] font-medium text-ink">О сервисе</span>
+          <span className="text-[12px] font-medium text-ink">Партнёрам</span>
+          <span className="text-[12px] font-medium text-ink">Безопасность</span>
+          <Link to="/support" className="text-[12px] font-medium text-ink hover:text-gold-deep">Поддержка</Link>
+        </nav>
         <LangSelector tone={dark ? "light" : "dark"} />
       </header>
     </>
@@ -142,18 +148,22 @@ export function SecureLine({ text }: { text: string }) {
 
 export function FeatureQuad({
   items,
+  desktop = "row",
 }: {
   items: { icon: ReactNode; title: string; text: string }[];
+  desktop?: "row" | "column";
 }) {
   return (
-    <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[14px] border border-line bg-card py-5">
+    <div className={`mt-4 grid grid-cols-2 sm:grid-cols-4 divide-y divide-line sm:divide-x sm:divide-y-0 rounded-[14px] border border-line bg-card py-5 ${desktop === "column" ? "lg:mt-0 lg:grid-cols-1 lg:divide-x-0 lg:divide-y lg:px-5 lg:py-2" : ""}`}>
       {items.map((item) => (
-        <div key={item.title} className="flex flex-col items-center px-3 text-center">
+        <div key={item.title} className={`flex flex-col items-center px-3 text-center ${desktop === "column" ? "lg:flex-row lg:gap-4 lg:px-0 lg:py-4 lg:text-left" : ""}`}>
           <span className="flex size-9 items-center justify-center rounded-full border border-gold/40 text-gold">
             {item.icon}
           </span>
-          <div className="mt-2 text-[11.5px] font-bold text-ink">{item.title}</div>
-          <div className="mt-1 whitespace-pre-line text-[10px] leading-[1.35] text-slate">{item.text}</div>
+          <div className={desktop === "column" ? "lg:min-w-0" : "contents"}>
+            <div className="mt-2 text-[11.5px] font-bold text-ink lg:mt-0">{item.title}</div>
+            <div className="mt-1 whitespace-pre-line text-[10px] leading-[1.35] text-slate">{item.text}</div>
+          </div>
         </div>
       ))}
     </div>
@@ -162,8 +172,8 @@ export function FeatureQuad({
 
 export function Footer({ variant = "method" }: { variant?: "method" | "full" }) {
   return (
-    <footer className="bg-navy px-4 sm:px-6 py-5">
-      <div className="flex items-start justify-between gap-4">
+    <footer className="bg-navy px-4 sm:px-6 py-5 lg:px-10 lg:py-7">
+      <div className="flex items-start justify-between gap-4 lg:grid lg:grid-cols-[1.45fr_0.8fr_0.8fr_0.8fr_1.15fr] lg:gap-10">
         <div>
           <TravelPayLogo tone="light" size="sm" />
           <p className="mt-1.5 text-[11px] text-white/60">Сервис безопасных платежей для путешествий</p>
@@ -177,7 +187,19 @@ export function Footer({ variant = "method" }: { variant?: "method" | "full" }) 
 
           )}
         </div>
-        <div className="text-right">
+        <div className="hidden lg:block">
+          <div className="text-[11px] font-semibold text-white">О сервисе</div>
+          <div className="mt-2 space-y-1.5 text-[10px] text-white/60"><div>Как это работает</div><div>Безопасность</div><div>Вопросы и ответы</div></div>
+        </div>
+        <div className="hidden lg:block">
+          <div className="text-[11px] font-semibold text-white">Партнёрам</div>
+          <div className="mt-2 space-y-1.5 text-[10px] text-white/60"><div>Подключиться</div><div>Условия сотрудничества</div><div>Документация</div></div>
+        </div>
+        <div className="hidden lg:block">
+          <div className="text-[11px] font-semibold text-white">Поддержка</div>
+          <div className="mt-2 space-y-1.5 text-[10px] text-white/60"><div>Центр помощи</div><div>Связаться с нами</div></div>
+        </div>
+        <div className="text-right lg:text-left">
           <div className="text-[11px] text-white/60">
             {variant === "full" ? "Служба поддержки 24/7" : "Служба поддержки"}
           </div>
@@ -191,7 +213,16 @@ export function Footer({ variant = "method" }: { variant?: "method" | "full" }) 
           ) : (
             <div className="text-[11px] text-white/60">Поддержка 24/7</div>
           )}
+          <div className="mt-2 hidden items-center gap-2 lg:flex" aria-hidden="true">
+            <span className="size-7 rounded-full bg-brandblue" />
+            <span className="size-7 rounded-full bg-success" />
+            <span className="size-7 rounded-full bg-[oklch(0.5_0.16_285)]" />
+          </div>
         </div>
+      </div>
+      <div className="mt-6 hidden items-center justify-between border-t border-white/10 pt-4 text-[9.5px] text-white/45 lg:flex">
+        <span>© 2024 GM International Travel. Все права защищены.</span>
+        <span className="flex gap-10"><span>Политика конфиденциальности</span><span>Пользовательское соглашение</span></span>
       </div>
     </footer>
   );

@@ -57,7 +57,7 @@ function InstallmentPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6 lg:grid-cols-[240px_minmax(0,1fr)_300px] lg:gap-6">
               <div>
                 <h2 className="text-[12px] font-bold text-ink">Как оформить рассрочку</h2>
                 <ol className="mt-3 space-y-3">
@@ -129,7 +129,7 @@ function InstallmentPage() {
                   ))}
                 </div>
 
-                <div className="mt-3 flex items-center gap-3 rounded-[12px] border border-line bg-surface-2 px-4 py-3">
+                <div className="mt-3 flex items-center gap-3 rounded-[12px] border border-line bg-surface-2 px-4 py-3 lg:absolute lg:right-[60px] lg:top-[454px] lg:w-[280px] lg:flex-col lg:items-start lg:p-5">
                   <Gift className="size-[20px] shrink-0 text-gold" strokeWidth={1.6} />
                   <div className="flex-1">
                     <div className="text-[11.5px] font-bold text-ink">Бонус при оформлении рассрочки</div>

@@ -9,22 +9,25 @@ import ntsEmblem from "@/assets/nts.png";
 
 export function GmLogo({ tone = "dark" }: { tone?: "dark" | "light" }) {
   return (
-    <img
-      src={tone === "light" ? gmLogoLight : gmLogoDark}
-      alt="GM Travel International"
-      className="h-[34px] w-auto shrink-0 sm:h-[38px]"
-    />
+    <span className="relative h-[34px] w-[58px] shrink-0 sm:h-[38px] sm:w-[65px] lg:h-[48px] lg:w-[154px]">
+      <img
+        src={tone === "light" ? gmLogoLight : gmLogoDark}
+        alt="GM Travel International"
+        className="size-full object-contain object-left lg:hidden"
+      />
+      <img src={gmLogoDark} alt="" aria-hidden="true" className="hidden size-full object-contain object-left lg:block" />
+    </span>
   );
 }
 
 export function NtsBar() {
   return (
-    <div className="bg-navy px-4 py-3 sm:px-6">
-      <div className="flex w-full items-center gap-3 rounded-xl border border-white/10 bg-[oklch(0.98_0.005_250)] px-3 py-2.5 sm:px-4">
-        <img src={ntsEmblem} alt="Национальный туристический союз РФ" className="h-[40px] w-auto shrink-0" />
+    <div className="bg-navy px-4 py-3 sm:px-6 lg:flex lg:h-[44px] lg:items-center lg:justify-center lg:bg-brandblue-soft lg:px-8 lg:py-0">
+      <div className="flex w-full items-center gap-3 rounded-xl border border-white/10 bg-[oklch(0.98_0.005_250)] px-3 py-2.5 sm:px-4 lg:w-auto lg:justify-center lg:rounded-none lg:border-0 lg:bg-transparent lg:px-0 lg:py-0">
+        <img src={ntsEmblem} alt="Национальный туристический союз РФ" className="h-[40px] w-auto shrink-0 lg:h-[28px]" />
         <div className="min-w-0">
-          <div className="text-[10.5px] leading-tight text-slate">Travel Pay создан по инициативе</div>
-          <div className="text-[11px] font-bold uppercase leading-tight tracking-[0.01em] text-navy sm:text-[12px]">
+          <div className="text-[10.5px] leading-tight text-slate lg:inline lg:text-[12px] lg:text-ink">Travel Pay создан по инициативе</div>
+          <div className="text-[11px] font-bold uppercase leading-tight tracking-[0.01em] text-navy sm:text-[12px] lg:ml-1 lg:inline lg:text-[12px]">
             Национального туристического союза РФ
           </div>
         </div>
@@ -64,7 +67,7 @@ export function TravelPayLogo({
         <TravelPayMark size={size === "sm" ? 20 : 26} />
       </span>
       <span className={`${text} font-semibold tracking-[0.12em]`}>
-        <span className={tone === "light" ? "text-white" : "text-ink"}>TRAVEL </span>
+        <span className={tone === "light" ? "text-white lg:text-ink" : "text-ink"}>TRAVEL </span>
         <span className="text-gold">PAY</span>
       </span>
     </div>
@@ -72,7 +75,7 @@ export function TravelPayLogo({
 }
 
 export function LangSelector({ tone = "dark" }: { tone?: "dark" | "light" }) {
-  const color = tone === "light" ? "text-white/85" : "text-slate";
+  const color = tone === "light" ? "text-white/85 lg:text-slate" : "text-slate";
   const { lang, setLang } = useLanguage();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);

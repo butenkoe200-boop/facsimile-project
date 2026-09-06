@@ -34,7 +34,7 @@ function SuccessPage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="bg-navy px-5 pb-5">
+        <div className="bg-navy px-5 pb-5 lg:bg-surface-2 lg:px-10">
           <OrderSummary third="paidAt" />
         </div>
 
@@ -49,7 +49,7 @@ function SuccessPage() {
           <div className="absolute inset-0 bg-card/40" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-4 sm:px-6 py-7 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
+            <div className="rounded-[16px] bg-card/95 px-4 sm:px-6 py-7 shadow-raised backdrop-blur-sm lg:rounded-none lg:bg-transparent lg:px-10 lg:py-5 lg:shadow-none lg:backdrop-blur-none">
               <div className="relative flex justify-center">
                 <span className="tp-confetti" aria-hidden="true" />
                 <span className="flex size-[62px] items-center justify-center rounded-full bg-success">

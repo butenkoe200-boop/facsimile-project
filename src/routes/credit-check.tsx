@@ -50,7 +50,7 @@ function CreditCheckPage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="bg-navy px-5 pb-5">
+        <div className="bg-navy px-5 pb-5 lg:bg-surface-2 lg:px-10">
           <OrderSummary third="orderedAt" numberValue={ORDER.numberTR} />
         </div>
 
@@ -65,7 +65,7 @@ function CreditCheckPage() {
           <div className="absolute inset-0 bg-card/45" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/92 px-4 sm:px-6 py-6 backdrop-blur-sm lg:px-10 lg:py-8">
+            <div className="rounded-[16px] bg-card/92 px-4 sm:px-6 py-6 backdrop-blur-sm lg:rounded-none lg:bg-transparent lg:px-10 lg:py-5 lg:backdrop-blur-none">
               <BackLink to="/credit-form" label="Назад к анкете" variant="arrow" />
 
               <h1 className="mt-3 text-center text-[21px] font-bold text-ink">Мы приняли вашу заявку!</h1>

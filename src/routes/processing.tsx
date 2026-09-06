@@ -31,7 +31,7 @@ function ProcessingPage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="bg-navy px-5 pb-5">
+        <div className="bg-navy px-5 pb-5 lg:bg-surface-2 lg:px-10">
           <OrderSummary />
         </div>
 
