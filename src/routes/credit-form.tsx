@@ -112,7 +112,7 @@ function CreditFormPage() {
 
         <div className="bg-card">
           <div className="relative">
-            <div className="grid grid-cols-1 sm:grid-cols-[1fr_290px] items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-[1fr_290px] items-start lg:grid-cols-[minmax(0,1fr)_420px]">
               <div className="px-4 sm:px-6 pt-5">
                 <BackLink
                   to={state.method === "installment" ? "/installment" : "/credit"}
@@ -137,7 +137,7 @@ function CreditFormPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-[1fr_290px] gap-5 px-4 sm:px-6 pb-6 pt-5">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_290px] gap-5 px-4 sm:px-6 pb-6 pt-5 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-8 lg:px-10 lg:pb-10 lg:pt-8">
             <form onSubmit={submit}>
               <h2 className="text-[12.5px] font-bold text-ink">Личные данные</h2>
               <div className="mt-2.5 grid grid-cols-2 sm:grid-cols-3 gap-3">

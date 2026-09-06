@@ -111,7 +111,7 @@ function ThanksPage() {
             ))}
           </span>
 
-          <div className="relative px-5 py-6">
+          <div className="relative px-5 py-6 lg:px-10 lg:py-8">
             <div className="flex justify-center">
               <span className="flex size-[54px] items-center justify-center rounded-full border-[3px] border-success bg-card">
                 <Check className="size-7 text-success" strokeWidth={3} />
@@ -133,7 +133,7 @@ function ThanksPage() {
             </p>
 
 
-            <div className="mt-5 grid grid-cols-2 sm:grid-cols-5 gap-3">
+            <div className="mx-auto mt-5 grid max-w-[920px] grid-cols-2 sm:grid-cols-5 gap-3">
               {PERKS.map((perk) => {
                 const Icon = perk.icon;
                 return (
@@ -149,7 +149,7 @@ function ThanksPage() {
               })}
             </div>
 
-            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 items-start gap-4">
+            <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 items-start gap-4 lg:gap-8">
               <div className="rounded-[14px] bg-card/95 p-4 shadow-card">
                 <h2 className="text-[12.5px] font-bold text-ink">Детали вашего заказа</h2>
                 <dl className="mt-3 space-y-2.5">

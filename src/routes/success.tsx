@@ -49,7 +49,7 @@ function SuccessPage() {
           <div className="absolute inset-0 bg-card/40" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-4 sm:px-6 py-7 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-4 sm:px-6 py-7 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
               <div className="relative flex justify-center">
                 <span className="tp-confetti" aria-hidden="true" />
                 <span className="flex size-[62px] items-center justify-center rounded-full bg-success">
@@ -71,7 +71,7 @@ function SuccessPage() {
                 </div>
               </div>
 
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-[1fr_260px] overflow-hidden rounded-[14px] border border-line">
+              <div className="mt-4 grid grid-cols-1 sm:grid-cols-[1fr_260px] overflow-hidden rounded-[14px] border border-line lg:grid-cols-[minmax(0,1fr)_380px]">
                 <div className="p-5">
                   <h2 className="text-[13px] font-bold text-ink">Детали платежа</h2>
                   <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3.5">

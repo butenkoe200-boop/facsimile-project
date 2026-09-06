@@ -22,7 +22,7 @@ function ProfilePage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="bg-surface px-5 py-5">
+        <div className="bg-surface px-5 py-5 lg:px-10 lg:py-8">
           <div className="flex items-start gap-2.5">
             <BackLink to="/" label="" />
             <div>
@@ -48,7 +48,7 @@ function ProfilePage() {
             </div>
           </div>
 
-          <div className="mt-4 rounded-[14px] border border-line bg-card p-4">
+          <div className="mt-4 rounded-[14px] border border-line bg-card p-4 lg:p-5">
             <h2 className="text-[12.5px] font-bold text-ink">Мои заказы</h2>
             <Link
               to="/success"
@@ -78,7 +78,7 @@ function ProfilePage() {
             </Link>
           </div>
 
-          <div className="mt-4 rounded-[14px] border border-line bg-card p-4">
+          <div className="mt-4 rounded-[14px] border border-line bg-card p-4 lg:p-5">
             <h2 className="text-[12.5px] font-bold text-ink">Документы</h2>
             <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link

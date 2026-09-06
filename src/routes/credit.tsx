@@ -59,7 +59,7 @@ function CreditPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-[164px_1fr] gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-[164px_1fr] gap-5 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10">
               <div className="min-w-0">
 
                 <h2 className="text-[12px] font-bold text-ink">Как оформить кредит</h2>
