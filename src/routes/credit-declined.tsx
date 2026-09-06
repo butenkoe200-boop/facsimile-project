@@ -82,7 +82,7 @@ function CreditDeclinedPage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="bg-navy px-5 pb-5">
+        <div className="bg-navy px-5 pb-5 lg:bg-surface-2 lg:px-10">
           <OrderSummary third="orderedAt" />
         </div>
 
@@ -97,7 +97,7 @@ function CreditDeclinedPage() {
           <div className="absolute inset-0 bg-card/55" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
+            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm lg:rounded-none lg:bg-transparent lg:px-10 lg:py-5 lg:shadow-none lg:backdrop-blur-none">
               <div className="flex justify-center">
                 <span className="flex size-[58px] items-center justify-center rounded-full bg-danger">
                   <X className="size-7 text-white" strokeWidth={3} />

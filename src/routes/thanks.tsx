@@ -63,7 +63,7 @@ function ThanksPage() {
       <div className="tp-frame">
         <Header tone="dark" />
 
-        <div className="bg-navy px-5 pb-5">
+        <div className="bg-navy px-5 pb-5 lg:bg-surface-2 lg:px-10">
           <div className="flex items-center justify-between gap-4 rounded-[14px] bg-card px-4 sm:px-6 py-4">
             <div>
               <div className="tp-label">Номер заказа</div>

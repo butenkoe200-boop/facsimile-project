@@ -82,7 +82,7 @@ function SplitPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10">
+            <div className="grid grid-cols-1 sm:grid-cols-[190px_1fr] gap-6 lg:grid-cols-[260px_minmax(0,1fr)_280px] lg:gap-6">
               <div>
                 <h2 className="text-[12px] font-bold text-ink">Как оплатить через Яндекс Сплит</h2>
                 <ol className="mt-3 space-y-3">
@@ -164,7 +164,7 @@ function SplitPage() {
                   </div>
                 </div>
 
-                <div className="mt-3 flex items-start gap-2 rounded-[10px] bg-warning-soft px-3.5 py-2.5">
+                <div className="mt-3 flex items-start gap-2 rounded-[10px] bg-warning-soft px-3.5 py-2.5 lg:absolute lg:right-[60px] lg:top-[450px] lg:w-[260px]">
                   <Info className="mt-px size-[14px] shrink-0 text-gold-deep" strokeWidth={1.8} />
                   <p className="text-[10px] leading-[1.4] text-ink">
                     Нажимая кнопку, вы переходите в Яндекс для оформления оплаты через Яндекс Сплит
@@ -177,7 +177,7 @@ function SplitPage() {
                     update({ method: "yandex-split" });
                     navigate({ to: "/processing" });
                   }}
-                  className="mt-3 flex w-full items-center justify-center gap-2.5 rounded-[10px] bg-navy py-3.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90"
+                  className="mt-3 flex w-full items-center justify-center gap-2.5 rounded-[10px] bg-navy py-3.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 lg:absolute lg:right-[60px] lg:top-[535px] lg:w-[260px]"
                 >
                   <span className="flex size-[18px] items-center justify-center rounded-full bg-danger text-[10px] font-bold">
                     Я

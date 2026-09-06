@@ -112,13 +112,13 @@ function Index() {
             className="absolute inset-0 size-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/45 via-navy/10 to-transparent" />
-          <div className="relative px-4 sm:px-6 pb-4 pt-7 lg:px-10 lg:pb-8 lg:pt-10">
-            <h1 className="max-w-[260px] text-[26px] font-bold leading-[1.15] text-white drop-shadow-[0_1px_8px_oklch(0.2_0.05_259/0.5)]">
+          <div className="relative px-4 sm:px-6 pb-4 pt-7 lg:min-h-[440px] lg:px-[92px] lg:pb-8 lg:pt-12">
+            <h1 className="max-w-[260px] text-[26px] font-bold leading-[1.15] text-white drop-shadow-[0_1px_8px_oklch(0.2_0.05_259/0.5)] lg:text-[38px]">
               Оплата вашего путешествия
             </h1>
             <p className="mt-2 text-[13px] text-white/90">Быстро, удобно, безопасно</p>
 
-            <div className="mt-4 w-[210px] rounded-[14px] bg-card/95 p-4 shadow-raised backdrop-blur-sm lg:w-[260px]">
+            <div className="mt-4 w-[210px] rounded-[14px] bg-card/95 p-4 shadow-raised backdrop-blur-sm lg:w-[500px] lg:p-5">
               <div className="tp-label">Номер заказа</div>
               <div className="mt-1 text-[16px] font-bold text-ink">{ORDER.numberTP}</div>
 
@@ -127,7 +127,7 @@ function Index() {
                 <div className="mt-0.5 text-[20px] font-bold text-gold">{ORDER.amount}</div>
               </div>
 
-              <div className="mt-3 space-y-2 border-t border-line pt-3">
+              <div className="mt-3 space-y-2 border-t border-line pt-3 lg:absolute lg:left-[300px] lg:top-[184px] lg:w-[270px] lg:border-l lg:border-t-0 lg:pl-7 lg:pt-0">
                 {BENEFITS.map((b) => {
                   const Icon = b.icon;
                   return (
