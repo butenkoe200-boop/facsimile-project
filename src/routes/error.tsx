@@ -107,7 +107,7 @@ function ErrorPage() {
           <div className="absolute inset-0 bg-card/55" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
               <div className="flex justify-center">
                 <span className="flex size-[62px] items-center justify-center rounded-full border-2 border-dashed border-danger/50">
                   <span className="flex size-[42px] items-center justify-center rounded-full bg-danger">

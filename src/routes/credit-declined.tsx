@@ -97,7 +97,7 @@ function CreditDeclinedPage() {
           <div className="absolute inset-0 bg-card/55" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
               <div className="flex justify-center">
                 <span className="flex size-[58px] items-center justify-center rounded-full bg-danger">
                   <X className="size-7 text-white" strokeWidth={3} />
@@ -122,7 +122,7 @@ function CreditDeclinedPage() {
 
               <div className="mt-5 rounded-[14px] border border-line bg-card p-4">
                 <h2 className="text-[12.5px] font-bold text-ink">Выберите другой способ оплаты</h2>
-                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-3 lg:grid-cols-6">
                   {OPTIONS.map((option) => (
                     <div key={option.title} className="rounded-[12px] border border-line bg-card p-3.5">
                       <div className="flex items-center gap-2.5">

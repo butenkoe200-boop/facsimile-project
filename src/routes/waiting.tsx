@@ -64,7 +64,7 @@ function WaitingPage() {
           <div className="absolute inset-0 bg-card/55" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
               <div className="relative mx-auto flex size-[106px] items-center justify-center">
                 <span
                   className="tp-spin absolute inset-0 rounded-full border-2 border-dotted border-brandblue/40"

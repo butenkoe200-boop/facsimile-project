@@ -57,7 +57,7 @@ function InstallmentPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6 lg:grid-cols-[280px_minmax(0,1fr)] lg:gap-10">
               <div>
                 <h2 className="text-[12px] font-bold text-ink">Как оформить рассрочку</h2>
                 <ol className="mt-3 space-y-3">

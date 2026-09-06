@@ -72,7 +72,7 @@ function CardPage() {
           />
           <OrderSummary />
 
-          <form onSubmit={submit} className="mt-4 rounded-[14px] border border-line bg-card p-5">
+          <form onSubmit={submit} className="mt-4 rounded-[14px] border border-line bg-card p-5 lg:mx-auto lg:max-w-[760px] lg:p-6">
             <div className="flex items-center justify-between">
               <span className="text-[12.5px] font-semibold text-ink">Мы принимаем к оплате</span>
               <span className="flex items-center gap-3">

@@ -58,7 +58,7 @@ function CreditApprovedPage() {
           <div className="absolute inset-0 bg-card/55" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/95 px-5 py-6 shadow-raised backdrop-blur-sm lg:px-10 lg:py-8">
               <div className="relative flex justify-center">
                 <span className="tp-confetti" aria-hidden="true" />
                 <span className="flex size-[58px] items-center justify-center rounded-full bg-success">
@@ -80,7 +80,7 @@ function CreditApprovedPage() {
 
               <div className="mt-5 rounded-[14px] border border-line bg-card p-4">
                 <h2 className="text-[12.5px] font-bold text-ink">Ваше персональное предложение</h2>
-                <div className="mt-3 grid grid-cols-1 sm:grid-cols-[1fr_1fr_240px] gap-4">
+                <div className="mt-3 grid grid-cols-1 sm:grid-cols-[1fr_1fr_240px] gap-4 lg:grid-cols-[1fr_1fr_320px] lg:gap-6">
                   <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {OFFER.map((item) => {
                       const Icon = item.icon;

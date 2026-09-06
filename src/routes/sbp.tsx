@@ -106,7 +106,7 @@ function SbpPage() {
           <OrderSummary />
 
           <div className="mt-4 rounded-[14px] border border-line bg-card p-5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-10">
               {/* Steps */}
               <div>
                 <h2 className="text-[12.5px] font-bold text-ink">Как оплатить через СБП</h2>

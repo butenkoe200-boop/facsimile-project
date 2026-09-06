@@ -65,7 +65,7 @@ function CreditCheckPage() {
           <div className="absolute inset-0 bg-card/45" />
 
           <div className="relative px-5 py-5">
-            <div className="rounded-[16px] bg-card/92 px-4 sm:px-6 py-6 backdrop-blur-sm">
+            <div className="rounded-[16px] bg-card/92 px-4 sm:px-6 py-6 backdrop-blur-sm lg:px-10 lg:py-8">
               <BackLink to="/credit-form" label="Назад к анкете" variant="arrow" />
 
               <h1 className="mt-3 text-center text-[21px] font-bold text-ink">Мы приняли вашу заявку!</h1>
@@ -107,7 +107,7 @@ function CreditCheckPage() {
                 </div>
               </div>
 
-              <div className="mt-5 grid grid-cols-1 sm:grid-cols-[1fr_240px] gap-4">
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-[1fr_240px] gap-4 lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-8">
                 <div className="rounded-[14px] border border-line bg-card p-3.5">
                   <ul className="space-y-2">
                     {STAGES.map((stage, index) => {

@@ -112,13 +112,13 @@ function Index() {
             className="absolute inset-0 size-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy/45 via-navy/10 to-transparent" />
-          <div className="relative px-4 sm:px-6 pb-4 pt-7">
+          <div className="relative px-4 sm:px-6 pb-4 pt-7 lg:px-10 lg:pb-8 lg:pt-10">
             <h1 className="max-w-[260px] text-[26px] font-bold leading-[1.15] text-white drop-shadow-[0_1px_8px_oklch(0.2_0.05_259/0.5)]">
               Оплата вашего путешествия
             </h1>
             <p className="mt-2 text-[13px] text-white/90">Быстро, удобно, безопасно</p>
 
-            <div className="mt-4 w-[210px] rounded-[14px] bg-card/95 p-4 shadow-raised backdrop-blur-sm">
+            <div className="mt-4 w-[210px] rounded-[14px] bg-card/95 p-4 shadow-raised backdrop-blur-sm lg:w-[260px]">
               <div className="tp-label">Номер заказа</div>
               <div className="mt-1 text-[16px] font-bold text-ink">{ORDER.numberTP}</div>
 
@@ -154,10 +154,10 @@ function Index() {
         </section>
 
         {/* Methods */}
-        <section className="bg-card px-4 sm:px-6 py-6">
+        <section className="bg-card px-4 sm:px-6 py-6 lg:px-10 lg:py-8">
           <h2 className="text-[16px] font-bold text-ink">Выберите способ оплаты</h2>
 
-          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-3 lg:grid-cols-6">
             {METHODS.map((m) => (
               <Link
                 key={m.id}
