@@ -119,7 +119,7 @@ function ThanksPage() {
             </div>
 
             <h1 className="mt-4 text-center text-[30px] font-bold leading-[1.1] text-ink">
-              <span className="block">🎉 Спасибо!</span>
+              <span className="block">Спасибо!</span>
               <span className="mt-1.5 block text-[23px] leading-[1.2]">
                 Ваше путешествие
                 <br />
